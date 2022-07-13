@@ -98,12 +98,34 @@ ul .nav-item:hover {
   color: rgba(14, 14, 14, 0.5);
 }
 
+/* singin */
+
 .DN button {
   width: 50px;
 }
 .DN {
   width: 171px;
   justify-content: end;
+  position: relative;
+}
+.DN:hover .account-content{
+  display: block;
+}
+.DN img{
+  border: 2px solid rgb(152, 149, 149);
+  border-radius: 25px;
+}
+.DN img:hover{
+  cursor: pointer;
+}
+.account-content{
+  animation: zoomin ease-in 0.3s;
+  transform-origin: 90% top;
+  /* will-change: opacity,transform; */
+  width: 200px;
+  position: absolute;
+  left: -25px !important; 
+  top: 100% !important;
 }
 
 /* BODY */
@@ -401,5 +423,15 @@ ul .nav-item:hover {
   }
   to {
     transform: translateX(0);
+  }
+}
+@keyframes zoomin {
+  from{
+    opacity: 0;
+    transform: scale(0);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
   }
 }

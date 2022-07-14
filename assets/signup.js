@@ -2,80 +2,82 @@
 $(document).ready(function () {
   // create login box
   $(".background-signup").html(`
-    <div class="background-signup-content d-flex overflow-hidden">
-      <div class="w-50 register flex-column justify-content-center align-items-center">
-        <label for="" class="d-block mb-4">
-          <h1 class="s-40">Sign in</h1>
-        </label>
-        <input type="email" class="form-control w-75 email d-inline-block" placeholder="Email" id="exampleInputEmail1">
-        <input type="password" class="form-control w-75 password d-inline-block mt-3" placeholder="Password"
-          id="exampleInputPassword1">
-          <div id="emailHelp" class="text-danger form-text s-14 d-block text-start errorr"></div>
+  <div class="background-signup-content d-flex overflow-hidden">
+  <!-- login -->
+  <div class="w-50 register flex-column justify-content-center align-items-center" style="display: flex;">
+    <label for="" class="d-block mb-4">
+      <h1 class="s-40">Sign in</h1>
+    </label>
+    <input type="email" class="form-control w-75 email d-inline-block" placeholder="Email" id="exampleInputEmail1">
+    <input type="password" class="form-control w-75 password d-inline-block mt-3" placeholder="Password"
+      id="exampleInputPassword1">
+    <div id="emailHelp" class="text-danger form-text s-14 d-block text-start errorr"></div>
 
-          <p class="s-16 mb-3">Forgot your password?</p><button type="button" class="btn btn-primary login-btn bth-signin">SIGN IN</button>
+    <p class="s-16 mb-3">Forgot your password?</p><button type="button"
+      class="btn btn-primary login-btn bth-signin">SIGN IN</button>
+  </div>
+
+  <div class="w-50 signupp d-flex flex-column justify-content-center align-items-center">
+    <label for="" class="d-block mb-4 text-white">
+      <h1 class="s-40">Hello, Friend!</h1>
+    </label>
+    <button type="button" class="btn btn-primary register-btn">SIGN UP</button>
+  </div>
+
+  <div class="register2 w-50 flex-column justify-content-center align-items-center" style="display: none;">
+    <label for="" class="d-block mb-4">
+      <h1 class="s-40">Register</h1>
+    </label>
+
+    <!-- name birth sex -->
+    <div class="infoGuest">
+      <div id="name" class="d-flex justify-content-between">
+        <input type="text" class="form-control name d-inline-block" placeholder="First Name" required id="firstname">
+        <input type="text" class="form-control name d-inline-block" placeholder="Last Name" required id="lastname">
       </div>
 
-      <div class="w-50 signupp d-flex flex-column justify-content-center align-items-center">
-        <label for="" class="d-block mb-4 text-white">
-          <h1 class="s-40">Hello, Friend!</h1>
-        </label>
-        <button type="button" class="btn btn-primary register-btn">SIGN UP</button>
+      <div class="birthday d-flex mt-3 justify-content-around w-100">
+        <label>Birthday</label>
+        <input type="date" id="birthday" class="border-0" value="2000-01-01" name="birthday">
       </div>
 
-      <div class="register2 w-50 flex-column justify-content-center align-items-center">
-
-        <label for="" class="d-block mb-4">
-          <h1 class="s-40">Register</h1>
-        </label>
-
-      <div class="infoGuest">
-        <div id="name" class="d-flex justify-content-between">
-          <input type="text" class="form-control name d-inline-block" placeholder="First Name" id="">
-          <input type="text" class="form-control name d-inline-block" placeholder="Last Name" id="">
+      <div class="sex d-flex mt-3 justify-content-between s-16 w-100">
+        <div>
+          <input type="radio" name="sex" id="male" required>
+          <label for="male">Male</label>
         </div>
-
-        <div class="birthday d-flex mt-3 justify-content-around w-100">
-          <label>Birthday</label>
-          <input type="date" id="birthday" class="border-0" value="2000-01-01" name="birthday">
-          </div>
-          
-          <div class="sex d-flex mt-3 justify-content-between s-16 w-100">
-            <div>
-                <input type="radio" name="sex" id="male">
-                <label for="male">Male</label>
-            </div>
-            <div>
-                <input type="radio" name="sex" id="female">
-                <label for="female">Female</label>
-            </div>
-          </div>
-          <div class="text-center">
-            <button type="button" class="btn btn-primary next mt-3">NEXT</button>
-          </div>
+        <div>
+          <input type="radio" name="sex" id="female" required>
+          <label for="female">Female</label>
         </div>
       </div>
-      
-      <div class="register3 w-50 flex-column justify-content-center align-items-center">
-      <label for="" class="d-block mb-4">
-        <h1 class="s-40">Create Account</h1>
-      </label>
-      <input type="email" class="form-control user w-75 d-inline-block mt-3" placeholder="Email"
-        id="exampleInputEmail1">
-      <input type="password" class="form-control pass w-75 d-inline-block mt-3" placeholder="Password"
-        id="exampleInputPassword1">
-      <input type="password" class="form-control pass w-75 d-inline-block mt-3" placeholder="RePassword"
-        id="exampleInputPassword1">
-      <button type="button" class="btn btn-primary login-btn bth-signup mt-3">SIGN UP</button>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary next mt-3">NEXT</button>
+      </div>
     </div>
-    </div>
+  </div>
+  <!-- mail pass -->
+  <div class="register3 w-50 flex-column justify-content-center align-items-center" style="display: none;">
+    <label for="" class="d-block mb-4">
+      <h1 class="s-40">Create Account</h1>
+    </label>
+    <input type="email" class="form-control user w-75 d-inline-block mt-3" placeholder="Email"
+      id="exampleInputEmail1" required>
+    <input type="password" class="form-control pass w-75 d-inline-block mt-3" placeholder="Password"
+      id="exampleInputPassword1" required>
+    <input type="password" class="form-control repass w-75 d-inline-block mt-3" placeholder="RePassword"
+      id="exampleInputPassword2" required>
+    <button type="button" class="btn btn-primary login-btn bth-signup mt-3">SIGN UP</button>
+  </div>
+</div>
     `);
-  
+
   // reset animation login box khi tắt bật lại
   $(".signin").click(function () {
-    $(".background-signup").css("display", "flex");
     $(".register2").css("animation", "");
     $(".signupp").css("animation", "");
     $(".register").css("animation", "");
+    $(".background-signup").css("display", "flex");
   });
   // vùng hủy close login box
   $(".background-signup-content").click(function (event) {
@@ -83,7 +85,7 @@ $(document).ready(function () {
   });
   // vùng close login box
   $(".background-signup").click(function () {
-    $(".background-signup").css("display", "none");
+    $(".background-signup").fadeOut();
   });
   //   animation login box
   $(".register-btn").click(function () {
@@ -107,38 +109,33 @@ $(document).ready(function () {
   if (localStorage.getItem("login") == 1) {
     signinSuccess();
   }
-  //next
-  $(".next").click(function(){
-    $(".register2").css("display","none")
-    $(".register3").css("display","flex")
-  })
-  // tạo và kiểm tra username password
-  $(".bth-signup").click(function () {
-    var user = $(".user").val();
-    var pass = $(".pass").val();
-    // var name = $(".name")
-    if (!user || !pass) {
+  // register
+  $(".next").click(function () {
+    var firstname = $("#firstname").val();
+    var lastname = $("#lastname").val();
+    if (!(firstname && lastname)) {
       alert("Write somthing!!");
     } else {
-      var newguest = new guest(user, pass);
-      if (!localStorage.getItem("guestID")) {
-        localStorage.setItem("guestID", "1");
-      } else {
-        localStorage.setItem(
-          "guestID",
-          parseInt(localStorage.getItem("guestID")) + 1
-        );
-      }
-      localStorage.setItem(
-        localStorage.getItem("guestID"),
-        JSON.stringify(newguest)
-      );
-      alert("Successful account creation, login please");
-      $(".user").val("");
-      $(".pass").val("");
-      $(".name").val("");
+      $(".register2").css("display", "none");
+      $(".register3").css("display", "flex");
     }
   });
+  $(".login-btn").click(function () {
+    var user = $(".user").val();
+    var pass = $(".pass").val();
+    var repass = $(".repass").val();
+    var firstname = $("#firstname").val();
+    var lastname = $("#lastname").val();
+    var name = firstname + " " + lastname;
+
+    if (pass != repass) {
+      alert("Password and Repassword different");
+    } else {
+      setguest(user, pass, name);
+      $(".background-signup").fadeOut();
+    }
+  });
+  // login
   $(".bth-signin").click(function () {
     switch (signin()) {
       case 0:
@@ -163,7 +160,25 @@ $(document).ready(function () {
     $('div [data-aos="slide-right"]').removeAttr("data-aos");
     $('div [data-aos="zoom-in"]').removeAttr("data-aos");
   }
+
+  //scroll
+  $("body").append(`
+  <div class="scroll-top">
+      <i class="fa-solid fa-angle-up"></i>
+  </div>
+  `);
+  $(document).scroll(function () {
+    if ($(this).scrollTop() > 400) {
+      $(".scroll-top").fadeIn();
+    } else if ($(this).scrollTop() < 300) {
+      $(".scroll-top").fadeOut();
+    }
+  });
+  $(".scroll-top").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 300);
+  });
 });
+
 function guest(user, pass, name) {
   this.user = user;
   this.pass = pass;
@@ -183,15 +198,16 @@ function signin() {
       ) {
         $(".errorr").html("Username or Password incorrect.");
       } else {
+        localStorage.setItem("DN", guest2.name);
         return 1;
       }
     }
   }
 }
 
-function signinSuccess() {
+function signinSuccess(name) {
   $(".DN").html(`
-  <p class="s-16 w-100 text-end"></p>
+  <p class="s-16 w-100 text-end">${localStorage.getItem("DN")}</p>
   <img class="dropdown-toggle" width="15%" src="assets/Img/avatar.png" alt=""  id="navbarDropdown"
   role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
   
@@ -201,4 +217,26 @@ function signinSuccess() {
     <li><a class="dropdown-item logout" href="#">Log out</a></li>
   </ul>
   `);
+}
+
+function setguest(user, pass, name) {
+  var newguest = new guest(user, pass, name);
+  // set số lượng guest làm ID
+  if (!localStorage.getItem("guestID")) {
+    localStorage.setItem("guestID", "1");
+  } else {
+    localStorage.setItem(
+      "guestID",
+      parseInt(localStorage.getItem("guestID")) + 1
+    );
+  }
+  // get ID từ số lượng guest
+  localStorage.setItem(
+    localStorage.getItem("guestID"),
+    JSON.stringify(newguest)
+  );
+  $(".user").val("");
+  $(".pass").val("");
+  $(".repass").val("");
+  $(".name").val("");
 }

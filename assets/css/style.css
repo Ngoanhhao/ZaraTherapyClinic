@@ -236,7 +236,7 @@ ul .nav-item:hover {
   margin: 0 auto;
 }
 #feedback p{
-  font-size: 12px;
+  font-size: 16px;
 }
 #feedback .col-6{
   text-align: justify;
@@ -288,16 +288,15 @@ ul .nav-item:hover {
   width: 261.72px !important;
 }
 .register {
-  display: flex;
+  /* display: flex; */
   overflow: hidden;
 }
 .register2 {
-  display: none;
+  /* display: none; */
   overflow: hidden;
-  animation: SAH ease 3s;
 }
 .register3 {
-  display: none;
+  /* display: none; */
   overflow: hidden;
   animation: HAS ease 3s;
 }

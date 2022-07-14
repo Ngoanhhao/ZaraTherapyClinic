@@ -27,6 +27,15 @@
         font-size: 18px;
 
     }
+    /* feedback */
+    #feedback .col-6{
+        width: 100%;
+        margin: 5px 0;
+    }
+    #feedback p{
+        width: 100%;
+        font-size: 18px;
+    }
 }
 /* <768*/
 @media only screen and (max-width: 767px){
@@ -78,5 +87,16 @@
     .dropdown:hover .dropdown-menu-first div,
     .dropdown:hover .dropdown-menu-second div{
         flex-direction: column !important;
+    }
+    /* slide prouduct */
+    .owl-stage-outer::after,
+    .owl-stage-outer::before{
+        display: none;
+    }
+    .owl-stage img{
+        width: 240px !important;        
+        margin: 0 auto !important;
+    }
+    .owl-stage .item{
     }
 }

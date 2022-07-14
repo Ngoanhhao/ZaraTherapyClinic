@@ -12,7 +12,7 @@ $(document).ready(function () {
           id="exampleInputPassword1">
           <div id="emailHelp" class="text-danger form-text s-14 d-block text-start errorr"></div>
 
-          <p class="s-16 mb-3">Forgot your password?</p>        <button type="button" class="btn btn-primary login-btn bth-signin">SIGN IN</button>
+          <p class="s-16 mb-3">Forgot your password?</p><button type="button" class="btn btn-primary login-btn bth-signin">SIGN IN</button>
       </div>
 
       <div class="w-50 signupp d-flex flex-column justify-content-center align-items-center">
@@ -23,18 +23,53 @@ $(document).ready(function () {
       </div>
 
       <div class="register2 w-50 flex-column justify-content-center align-items-center">
+
         <label for="" class="d-block mb-4">
           <h1 class="s-40">Register</h1>
         </label>
-        <input type="text" class="form-control name w-75 d-inline-block" placeholder="Name" id="">
-        <input type="email" class="form-control user w-75 d-inline-block mt-3 mb-3" placeholder="Email"
-          id="exampleInputEmail1">
-        <input type="password" class="form-control pass w-75 d-inline-block" placeholder="Password"
-          id="exampleInputPassword1">
-        <button type="button" class="btn btn-primary login-btn bth-signup mt-3">SIGN UP</button>
+
+      <div class="infoGuest">
+        <div id="name" class="d-flex justify-content-between">
+          <input type="text" class="form-control name d-inline-block" placeholder="First Name" id="">
+          <input type="text" class="form-control name d-inline-block" placeholder="Last Name" id="">
+        </div>
+
+        <div class="birthday d-flex mt-3 justify-content-around w-100">
+          <label>Birthday</label>
+          <input type="date" id="birthday" class="border-0" value="2000-01-01" name="birthday">
+          </div>
+          
+          <div class="sex d-flex mt-3 justify-content-between s-16 w-100">
+            <div>
+                <input type="radio" name="sex" id="male">
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="radio" name="sex" id="female">
+                <label for="female">Female</label>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary next mt-3">NEXT</button>
+          </div>
+        </div>
       </div>
+      
+      <div class="register3 w-50 flex-column justify-content-center align-items-center">
+      <label for="" class="d-block mb-4">
+        <h1 class="s-40">Create Account</h1>
+      </label>
+      <input type="email" class="form-control user w-75 d-inline-block mt-3" placeholder="Email"
+        id="exampleInputEmail1">
+      <input type="password" class="form-control pass w-75 d-inline-block mt-3" placeholder="Password"
+        id="exampleInputPassword1">
+      <input type="password" class="form-control pass w-75 d-inline-block mt-3" placeholder="RePassword"
+        id="exampleInputPassword1">
+      <button type="button" class="btn btn-primary login-btn bth-signup mt-3">SIGN UP</button>
+    </div>
     </div>
     `);
+  
   // reset animation login box khi tắt bật lại
   $(".signin").click(function () {
     $(".background-signup").css("display", "flex");
@@ -64,6 +99,7 @@ $(document).ready(function () {
       $(".signupp label h1").text("Hello friend!");
       $(".register-btn").text("SIGN UP");
       $(".register2").css("display", "none");
+      $(".register3").css("display", "none");
       $(".register").css("animation", "RtL ease 0.7s");
       $(".signupp").css("animation", "LtoR  ease 0.7s");
     }
@@ -71,10 +107,16 @@ $(document).ready(function () {
   if (localStorage.getItem("login") == 1) {
     signinSuccess();
   }
+  //next
+  $(".next").click(function(){
+    $(".register2").css("display","none")
+    $(".register3").css("display","flex")
+  })
   // tạo và kiểm tra username password
   $(".bth-signup").click(function () {
     var user = $(".user").val();
     var pass = $(".pass").val();
+    // var name = $(".name")
     if (!user || !pass) {
       alert("Write somthing!!");
     } else {
@@ -110,10 +152,10 @@ $(document).ready(function () {
     }
   });
   //logout
-  $(".logout").click(function(){
-    localStorage.setItem("login","0")
+  $(".logout").click(function () {
+    localStorage.setItem("login", "0");
     location.reload();
-  })
+  });
   // xóa bớt animation trên mobile
   const mediaQuery = window.matchMedia("(max-width: 576px)");
   if (mediaQuery.matches) {
@@ -122,9 +164,10 @@ $(document).ready(function () {
     $('div [data-aos="zoom-in"]').removeAttr("data-aos");
   }
 });
-function guest(user, pass) {
+function guest(user, pass, name) {
   this.user = user;
   this.pass = pass;
+  this.name = name;
 }
 
 function signin() {
@@ -148,7 +191,8 @@ function signin() {
 
 function signinSuccess() {
   $(".DN").html(`
-  <img class="dropdown-toggle" width="30%" src="assets/Img/avatar.png" alt=""  id="navbarDropdown"
+  <p class="s-16 w-100 text-end"></p>
+  <img class="dropdown-toggle" width="15%" src="assets/Img/avatar.png" alt=""  id="navbarDropdown"
   role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
   
   <ul class="dropdown-menu account-content">

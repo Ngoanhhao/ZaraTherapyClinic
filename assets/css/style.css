@@ -241,9 +241,6 @@ ul .nav-item:hover {
 #feedback .col-6{
   text-align: justify;
 }
-.carousel-control-next {
-  left: 333px;
-}
 /* footer */
 .footer {
   background-color: rgba(187, 227, 250, 0.4);

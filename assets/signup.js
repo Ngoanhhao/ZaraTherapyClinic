@@ -124,7 +124,7 @@ $(document).ready(function () {
       $(".register3").css("display", "flex");
     }
   });
-  $(".login-btn").click(function () {
+  $(".bth-signup").click(function () {
     var user = $(".user").val();
     var pass = $(".pass").val();
     var repass = $(".repass").val();
@@ -160,11 +160,7 @@ $(document).ready(function () {
   $(".bth-signin").click(function () {
     switch (signin()) {
       case 0:
-        toast({
-          title: "error",
-          message: "Write something!!",
-          type: "warning",
-        });
+
         break;
       case 1:
         $(".errorr").html("");
@@ -215,7 +211,7 @@ $(document).ready(function () {
     $(".toastt:last-child").attr("class", `toastt toastt--${type}`);
     $("#toast").append(
       $(".toastt:last-child").html(`
-    <div class="icon m-5">
+    <div class="icon m-5 s-20">
       <i class="${icon}"></i>
     </div>
     <div class="info">
@@ -264,7 +260,7 @@ function signin() {
   }
 }
 
-function signinSuccess(name) {
+function signinSuccess() {
   $(".DN").html(`
   <p class="s-16 w-100 text-end">${localStorage.getItem("DN")}</p>
   <img class="dropdown-toggle" width="15%" src="assets/Img/avatar.png" alt=""  id="navbarDropdown"

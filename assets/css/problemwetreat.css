@@ -42,6 +42,37 @@
     background-image: url("../Img/ankle/dau-mat-ca-desktop.jpg");
 }
 
+.bodytop-background-pneumex{
+    background-image: url("../anh_background/pneumex-pneuback-mobile.jpg"); 
+}
+.bodytop-background-vertetrac{
+    background-image: url("../anh_background/vertetrac-and-cervico-2000-mobile.jpg");
+}
+.bodytop-background-shockwave{
+    background-image: url("../anh_background/acc-combined-therapies-physiotherapy-shockwave-mobile.png");
+}
+.bodytop-background-physiotherapy{
+    background-image: url("../anh_background/acc-combined-therapies-physiotherapy-mobile.png");
+}
+.bodytop-background-manualtherapy{
+    background-image: url("../anh_background/lieu-phap-thu-cong-mobile.jpg");
+}
+.bodytop-background-footorthortics{
+    background-image: url("../anh_background/chinh-hinh-ban-chan-mobile-1.jpg");
+}
+.bodytop-background-dts{
+    background-image: url("../anh_background/dieu-tri-dts-mobile.jpg");
+}
+.bodytop-background-laser{
+    background-image: url("../anh_background/acc-combined-therapies-physiotherapy-laser-mobile.png");
+}
+.bodytop-background-chiropractic{
+    background-image: url("../anh_background/Tri-lieu-than-kinh-cot-song-desktop.jpg");
+}
+.bodytop-background-activetherapeuticmovement{
+    background-image: url("../anh_background/thiet-bi-tri-lieu-atm2-mobile.jpg");
+}
+
 
 .bodytop-background-pneumex{
     /* background-image: url("../"); */

@@ -114,7 +114,11 @@ $(document).ready(function () {
     var firstname = $("#firstname").val();
     var lastname = $("#lastname").val();
     if (!(firstname && lastname)) {
-      alert("Write somthing!!");
+      toast({
+        title: "error",
+        message: "Write something!!",
+        type: "warning",
+      });
     } else {
       $(".register2").css("display", "none");
       $(".register3").css("display", "flex");
@@ -128,18 +132,39 @@ $(document).ready(function () {
     var lastname = $("#lastname").val();
     var name = firstname + " " + lastname;
 
-    if (pass != repass) {
-      alert("Password and Repassword different");
+    if (!$(".user").val() || !$(".pass").val() || !$(".repass").val()) {
+      toast({
+        title: "error",
+        message: "Write something!!",
+        type: "warning",
+      });
     } else {
-      setguest(user, pass, name);
-      $(".background-signup").fadeOut();
+      if (pass != repass) {
+        toast({
+          title: "warning",
+          message: "Password and Repassword different!!",
+          type: "warning",
+        });
+      } else {
+        toast({
+          title: "Success",
+          message: "Sign Up Success.",
+          type: "success",
+        });
+        setguest(user, pass, name);
+        $(".background-signup").fadeOut();
+      }
     }
   });
   // login
   $(".bth-signin").click(function () {
     switch (signin()) {
       case 0:
-        alert("Write somthing!!");
+        toast({
+          title: "error",
+          message: "Write something!!",
+          type: "warning",
+        });
         break;
       case 1:
         $(".errorr").html("");
@@ -178,46 +203,38 @@ $(document).ready(function () {
     $("html, body").animate({ scrollTop: 0 }, 300);
   });
 
-
-
   //error box
-  $(".signin").mouseover(function(){
-    toast({
-      title: 'error',
-      message: 'Chúc mừng, Bạn đã đăng kí thất bại.',
-      type: 'warning',
-    })
-  })    
-
   var icons = {
-    success: 'fa-solid fa-circle-check',
-    warning: 'fa-solid fa-exclamation'
-  }
+    success: "fa-solid fa-circle-check",
+    warning: "fa-solid fa-exclamation",
+  };
   var x = -10;
   function toast({ title, message, type }) {
     var icon = icons[type];
-    $("#toast").append('<div class="toastt">')
-    $(".toastt:last-child").attr("class", `toastt toastt--${type}`)
-    $("#toast").append($(".toastt:last-child").html(`
-    <div class="icon">
+    $("#toast").append('<div class="toastt">');
+    $(".toastt:last-child").attr("class", `toastt toastt--${type}`);
+    $("#toast").append(
+      $(".toastt:last-child").html(`
+    <div class="icon m-5">
       <i class="${icon}"></i>
     </div>
     <div class="info">
       <h3>${title}</h3>
       <p>${message}</p>
     </div>
-    <div class="close">
-      <i class="fa-solid fa-xmark"></i>
-    </div>
-    `))
-    $(".toastt:last-child").animate({ top: `${x += 86}px` })
-    $(".toastt:last-child").animate({ right: '0', top: `${x}`, opacity: "1" }, "slow");
+    `)
+    );
+    $(".toastt:last-child").animate({ top: `${(x += 86)}px` });
+    $(".toastt:last-child").animate(
+      { right: "0", top: `${x}`, opacity: "1" },
+      "slow"
+    );
 
     $(this).delay(2000).remove();
     setTimeout(function () {
       $(".toastt:first-child").remove();
-      $(".toastt:first-child").animate({ top: `${x -= 86}px` }, "slow")
-    }, 3000)
+      $(".toastt:first-child").animate({ top: `${(x -= 86)}px` }, "slow");
+    }, 3000);
   }
 });
 

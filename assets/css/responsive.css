@@ -39,6 +39,12 @@
 }
 /* <768*/
 @media only screen and (max-width: 767px){
+    .card-body h5{
+        font-size: 1.8rem !important;
+    }
+    .cardd a {
+        font-size: 1.6rem;
+    }
     .background-top{
         padding-top: 80% !important;
     }
@@ -49,6 +55,13 @@
     .carousel-item div p{
         width: 80%;
         margin: 10px 0;
+        font-size: 1.4rem !important;
+    }
+    p, ul li{
+        font-size: 1.6rem !important;
+    }
+    h1{
+        font-size: 2.5rem !important;
     }
     /* problem we treat */
     .bodytop-background{

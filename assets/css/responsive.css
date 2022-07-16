@@ -53,9 +53,21 @@
         align-items: center;
     }
     .carousel-item div p{
+        height: 330px;
+    }
+    #feedback .col-6:last-child{
+        height: 310px;
+    }
+    .carousel-item div p{
         width: 80%;
         margin: 10px 0;
         font-size: 1.4rem !important;
+    }
+    .feadback .carousel-control-prev{
+        left: -35px !important;
+    }
+    .feadback .carousel-control-next{
+        right: -35px !important;
     }
     p, ul li{
         font-size: 1.6rem !important;

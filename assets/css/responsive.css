@@ -8,7 +8,7 @@
         align-items: center;
     }
     .cardd{
-        width: 60% !important;
+        width: 75% !important;
     }
     .card{
         margin: 10px 0;
@@ -56,9 +56,16 @@
     }
     .bodytop-background-content{
         left: 50px;
-        top: 55%;
-        font-size: 3rem;
-
+        top: 45%;
+        max-width: 300px;
+        font-size: 2rem;
+    }
+    .discsyndrome ,.pneumexpneuback{
+        padding: 0 30px !important;
+    }
+    .pneumexpneuback .img1 img,
+    .discsyndrome .img1 img{
+        width: 70% !important;
     }
     /* content */
     .contact-body h1{

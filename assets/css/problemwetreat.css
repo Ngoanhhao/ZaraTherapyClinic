@@ -83,6 +83,10 @@
     max-width: 1000px !important;
 }
 
+.discsyndrome p{
+    text-align: justify !important;
+}
+
 .bodytop-background{
     position: relative;
 }

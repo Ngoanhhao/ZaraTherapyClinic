@@ -239,21 +239,23 @@ ul .nav-item:hover {
   font-size: 16px;
 }
 #feedback .col-6{
-  text-align: justify;
+  /* text-align: justify; */
 }
+
 /* footer */
 .footer {
   background-color: rgba(187, 227, 250, 0.4);
   background-size: cover;
 }
-.footer-content a {
+.footer-content a,
+.footer p {
   display: block;
   margin: 5px 0;
   text-decoration: none;
   color: black;
   opacity: 0.8;
 }
-.footer-content h3 {
+.footer h3 {
   opacity: 0.9;
 }
 .footer-content a:hover {

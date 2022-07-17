@@ -83,12 +83,14 @@
     max-width: 1000px !important;
 }
 
-.discsyndrome p{
-    text-align: justify !important;
+.discsyndrome p
+,.pneumexpneuback p{
+    text-align: justify;
 }
 
 .bodytop-background{
     position: relative;
+    margin-bottom: 50px;
 }
 
 .bodytop-background-content {
@@ -127,7 +129,4 @@ ul li{
 }
 body a{
     text-decoration: none;
-}
-p::selection{
-    background-color: #5bdcf6;
 }

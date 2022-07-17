@@ -182,7 +182,7 @@ $(document).ready(function () {
     $('div [data-aos="zoom-in"]').removeAttr("data-aos");
   }
 
-  //scroll
+  //scroll top
   $("body").append(`
   <div class="scroll-top">
       <i class="fa-solid fa-angle-up"></i>

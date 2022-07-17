@@ -42,11 +42,11 @@ $(document).ready(function () {
       </div>
 
       <div class="sex d-flex mt-3 justify-content-between s-16 w-100">
-        <div>
+        <div class="male">
           <input type="radio" name="sex" id="male" required>
           <label for="male">Male</label>
         </div>
-        <div>
+        <div class="female">
           <input type="radio" name="sex" id="female" required>
           <label for="female">Female</label>
         </div>
@@ -160,7 +160,6 @@ $(document).ready(function () {
   $(".bth-signin").click(function () {
     switch (signin()) {
       case 0:
-
         break;
       case 1:
         $(".errorr").html("");
@@ -232,6 +231,16 @@ $(document).ready(function () {
       $(".toastt:first-child").animate({ top: `${(x -= 86)}px` }, "slow");
     }, 3000);
   }
+
+  // sex
+  $(".male").click(function () {
+    $("#female").removeAttr("checked");
+    $("#male").attr("checked", "checked");
+  });
+  $(".female").click(function () {
+    $("#male").removeAttr("checked");
+    $("#female").attr("checked", "checked");
+  });
 });
 
 function guest(user, pass, name) {
@@ -262,11 +271,13 @@ function signin() {
 
 function signinSuccess() {
   $(".DN").html(`
-  <p class="s-16 w-100 text-end">${localStorage.getItem("DN")}</p>
-  <img class="dropdown-toggle" width="15%" src="assets/Img/avatar.png" alt=""  id="navbarDropdown"
-  role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+  <img class="" width="15%" src="assets/Img/avatar.png"> 
   
   <ul class="dropdown-menu account-content">
+    <li><a class="dropdown-item" id="nameinfo" href="#">${localStorage.getItem(
+      "DN"
+    )}</a></li>
+    <li><hr class="dropdown-divider"></li>
     <li><a class="dropdown-item" href="#">My account</a></li>
     <li><a class="dropdown-item" href="#">Shoping cart</a></li>
     <li><a class="dropdown-item logout" href="#">Log out</a></li>

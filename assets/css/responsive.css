@@ -1,132 +1,152 @@
 /* <1024px */
 @media only screen and (max-width: 1024px) {
-    #carouselExampleIndicators{
-        width: 95%;
-    }
-    .Problems{
-        flex-direction: column;
-        align-items: center;
-    }
-    .cardd{
-        width: 75% !important;
-    }
-    .card{
-        margin: 10px 0;
-    }
-    .card-body h5,
-    .card-body a{
-        font-size: 24px;
-        margin: 10px 0 10px 5px;
-    }
-    .card-body p{
-        font-size: 18px;
-        margin-left: 10px;
-    }
-    .DN button{
-        width: 150px;
-        font-size: 18px;
-
-    }
-    /* feedback */
-    #feedback .col-6{
-        width: 100%;
-        margin: 5px 0;
-    }
-    #feedback p{
-        width: 100%;
-        font-size: 18px;
-    }
+  #carouselExampleIndicators {
+    width: 95%;
+  }
+  .Problems {
+    align-items: center;
+  }
+  .card-body h5,
+  .card-body a {
+    font-size: 24px;
+    margin: 10px 0 10px 5px;
+  }
+  .card-body p {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+  .DN button {
+    width: 150px;
+    font-size: 18px;
+  }
+  /* feedback */
+  #feedback .col-6 {
+    width: 100%;
+    margin: 5px 0;
+  }
+  #feedback p {
+    width: 100%;
+    font-size: 18px;
+  }
 }
 /* <768*/
-@media only screen and (max-width: 767px){
-    .card-body h5{
-        font-size: 1.8rem !important;
-    }
-    .cardd a {
-        font-size: 1.6rem;
-    }
-    .background-top{
-        padding-top: 80% !important;
-    }
-    .carousel-item div{
-        flex-direction: column;
-        align-items: center;
-    }
-    .carousel-item div p{
-        height: 330px;
-    }
-    #feedback .col-6:last-child{
-        height: 310px;
-    }
-    .carousel-item div p{
-        width: 80%;
-        margin: 10px 0;
-        font-size: 1.4rem !important;
-    }
-    .feadback .carousel-control-prev{
-        left: -35px !important;
-    }
-    .feadback .carousel-control-next{
-        right: -35px !important;
-    }
-    p, ul li{
-        font-size: 1.6rem !important;
-    }
-    h1{
-        font-size: 2.5rem !important;
-    }
-    /* problem we treat */
-    .bodytop-background{
-        padding-top: 45%;
-    }
-    .bodytop-background-content{
-        left: 50px;
-        top: 45%;
-        max-width: 300px;
-        font-size: 2rem;
-    }
-    .discsyndrome ,.pneumexpneuback{
-        padding: 0 30px !important;
-    }
-    .pneumexpneuback .img1 img,
-    .discsyndrome .img1 img{
-        width: 70% !important;
-    }
-    /* content */
-    .contact-body h1{
-        font-size: 36px;
-        text-align: center;
-    }
-    .contact-body-content{
-        flex-direction: column;
-    }
-    .contact-body-content div{
-        width: 100% !important;
-    }
+@media only screen and (max-width: 767px) {
+  .card-body h5 {
+    font-size: 1.8rem !important;
+  }
+  .cardd a {
+    font-size: 1.6rem;
+  }
+  .background-top {
+    padding-top: 80% !important;
+  }
+  .carousel-item div {
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel-item div p {
+    height: 330px;
+  }
+  .carousel-item div p {
+    width: 80%;
+    margin: 10px 0;
+    font-size: 1.4rem !important;
+  }
+  p,
+  ul li {
+    font-size: 1.6rem !important;
+  }
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  /* problem we treat */
+  .bodytop-background {
+    padding-top: 45%;
+  }
+  .bodytop-background-content {
+    left: 50px;
+    top: 45%;
+    max-width: 300px;
+    font-size: 2rem;
+  }
+  .discsyndrome,
+  .pneumexpneuback {
+    padding: 0 30px !important;
+  }
+  .pneumexpneuback .img1 img,
+  .discsyndrome .img1 img {
+    width: 70% !important;
+  }
+  /* content */
+  .contact-body h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+  .contact-body-content {
+    flex-direction: column;
+  }
+  .contact-body-content div {
+    width: 100% !important;
+  }
+  /* feedback */
+  .feedback .d-flex {
+    flex-direction: column;
+  }
+  .feedback .d-flex div {
+    width: 80%;
+    margin: 0% auto;
+  }
+  /* footer */
+  .footer {
+    text-align: center;
+  }
 }
 /* <=576 */
-@media only screen and (max-width: 576px){
-    .background-top {
-        padding-top: 195% !important;
-    }
-    .background-content .background-text {
-        width: 80%;
-        font-size: 20px;
-    }
-    .background-content .background-title{
-        font-size: 28px;
-    }
-    .dropdown:hover .dropdown-menu-first div,
-    .dropdown:hover .dropdown-menu-second div{
-        flex-direction: column !important;
-    }
-    /* slide prouduct */
-    .owl-stage-outer::after,
-    .owl-stage-outer::before{
-        display: none;
-    }
-    .owl-stage img{
-        width: 240px !important;        
-        margin: 0 auto !important;
-    }
+@media only screen and (max-width: 576px) {
+  .background-top {
+    padding-top: 195% !important;
+  }
+  .background-content .background-text {
+    width: 80%;
+    font-size: 20px;
+  }
+  .background-content .background-title {
+    font-size: 28px;
+  }
+  .dropdown:hover .dropdown-menu-first div,
+  .dropdown:hover .dropdown-menu-second div {
+    flex-direction: column !important;
+  }
+  /* slide prouduct */
+  .owl-stage-outer::after,
+  .owl-stage-outer::before {
+    display: none;
+  }
+  .owl-stage img {
+    width: 240px !important;
+    margin: 0 auto !important;
+  }
+  /* login box */
+  .background-signup-content {
+    height: 350px;
+  }
+  #name,
+  .sex {
+    flex-direction: column;
+  }
+  #name input,
+  .sex div {
+    width: 100%;
+  }
+  .birthday label {
+    display: none;
+  }
+  /* copyright */
+  .copyright {
+    width: 100%;
+    text-align: center;
+  }
+  .copyright h3 {
+    margin-top: 20px;
+  }
 }

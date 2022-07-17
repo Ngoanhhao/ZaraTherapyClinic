@@ -117,7 +117,7 @@
   .dropdown:hover .dropdown-menu-second div {
     flex-direction: column !important;
   }
-  /* slide prouduct */
+  /* prouduct */
   .owl-stage-outer::after,
   .owl-stage-outer::before {
     display: none;
@@ -140,6 +140,10 @@
   }
   .birthday label {
     display: none;
+  }
+  /* feedback */
+  .feedback img{
+    width: 100% !important;
   }
   /* copyright */
   .copyright {

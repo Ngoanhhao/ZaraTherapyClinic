@@ -271,10 +271,10 @@ function signin() {
 
 function signinSuccess() {
   $(".DN").html(`
-  <img class="" width="15%" src="assets/Img/avatar.png"> 
+  <img width="15%" src="assets/Img/avatar.png"> 
   
   <ul class="dropdown-menu account-content">
-    <li><a class="dropdown-item" id="nameinfo" href="#">${localStorage.getItem(
+    <li class="text-center"><a class="dropdown-item" id="nameinfo" href="#">${localStorage.getItem(
       "DN"
     )}</a></li>
     <li><hr class="dropdown-divider"></li>

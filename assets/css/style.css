@@ -4,37 +4,39 @@
 }
 html {
   font-size: 62.5%;
-  font-family: "Roboto", sans-serif;
+}
+body{
+  font-family: "Roboto", sans-serif !important;
 }
 ::selection {
   background-color: #5bdcf6;
 }
 .s-12 {
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
 }
 .s-14 {
-  font-size: 1.4rem;
+  font-size: 1.4rem !important;
 }
 .s-16 {
-  font-size: 1.6rem;
+  font-size: 1.6rem !important;
 }
 .s-18 {
-  font-size: 1.8rem;
+  font-size: 1.8rem !important;
 }
 .s-20 {
-  font-size: 2rem;
+  font-size: 2rem !important;
 }
 .s-24 {
-  font-size: 2.4rem;
+  font-size: 2.4rem !important;
 }
 .s-30 {
-  font-size: 3rem;
+  font-size: 3rem !important;
 }
 .s-36 {
-  font-size: 3.6rem;
+  font-size: 3.6rem !important;
 }
 .s-40 {
-  font-size: 4rem;
+  font-size: 4rem !important;
 }
 .FAF7F2 {
   background: #faf7f2;
@@ -66,9 +68,11 @@ ul .nav-item {
   margin: 0 10px;
   animation: TopDrop ease 1s;
 }
-
-ul .nav-item:hover {
+ul .nav-item:hover{
   border-bottom: 1px solid black;
+}
+ul .nav-item a:hover{
+  opacity: 0.7;
 }
 
 .dropdown-menu .dropdown-item {
@@ -252,9 +256,19 @@ ul .nav-item:hover {
   width: 20%;
 }
 .card-body a {
-  padding: 3px 10px;
+  padding: 7px 20px;
   border: 1px solid;
-  border-radius: 5px;
+  border-radius: 3px;
+}
+.card-body a:hover{
+  background-color: rgba(14, 14, 14, 0.5);
+  color: white;
+}
+.card-body h5{
+  font-weight: 500;
+}
+.card-text{
+  height: 85px;
 }
 /* feadback */
 

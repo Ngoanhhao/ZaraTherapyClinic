@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZaraTherapyClinic</title>
+    <link rel="icon" type="image/x-icon" href="assets/Img/logo_web.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/shopping.css">
+    <link rel="stylesheet" href="assets/font/Roboto/stylesheet.css">
+    <link rel="stylesheet" href="assets/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font/fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-5.2.0-beta1-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-5.2.0-beta1-dist/css/bootstrap-reboot.min.css">
+    <script src="assets/bootstrap-5.2.0-beta1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/jquery/jquery-3.6.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/carousel/owl.theme.default.min.css">
+    <script src="assets/carousel/owl.carousel.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body class="scroll">
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-xl bg-white">
+
+    </nav>
+
+
+    <!-- BODY -->
+
+    <div class="products d-flex row">
+        <!-- menu left -->
+        <div class="col-3">
+            <input class="form-control text-center s-16" type="text" placeholder="Search" aria-label="Search">
+            <div class="s-16 menu1">
+                <p class="w-100 Skinessentials d-flex justify-content-between ">Skin essentials<i
+                        class="fa-solid fa-chevron-down"></i></p>
+                <ul>
+                    <li><a class="alert" href="#">Environ</a></li>
+                    <li><a class="alert" href="#">Murad</a></li>
+                </ul>
+            </div>
+
+            <div class="s-16 menu2">
+                <p class="w-100">Essential oil</p>
+                <ul class="">
+                    <li><a class="alert" href="#"></a></li>
+                    <li><a class="alert" href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- products -->
+        <div class="col-9 row">
+            <!-- <div class="col-4">
+                <div class="product-content">
+                    <div>
+                        <a href="#">
+                            <img src="./assets/Img/products/environ/NEW_Environ_Starter_Kit-905x643-7fc31b26-4ed7-432f-a28a-9889b5fed00c.png"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="NameProduct text-start">Environ Starter Kit</h3>
+                        <h3 class="Money text-start">119.00$</h3>
+                        <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="product-content">
+                    <div>
+                        <a href="#">
+                            <img src="./assets/Img/products/environ/14042016-193659-youth-essentia-eye-gel-905x1280-9aa30ff4-8fe1-4c1f-9742-9dbc0a2f3a1d.png"
+                                alt="">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="product-content">
+                    <div>
+                        <a href="#">
+                            <img src="./assets/Img/products/environ/08092016-174826-skin_essentia_avst_moisturiser_1.png"
+                                alt="">
+                        </a>
+                    </div>
+
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- footer -->
+
+    <!-- <div class="footer w-100"></div> -->
+
+    <!-- login -->
+    <div class="background-signup justify-content-center align-items-center"></div>
+    <div id="toast"></div>
+
+</body>
+
+</html>
+<script src="./assets/nav.js"></script>
+<script src="./assets/signup.js"></script>
+<script src="./assets/footer.js"></script>
+<script src="./assets/countUp/countUp.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+
+    AOS.init({
+        duration: 2000,
+    });
+    // $().attr
+    $(document).ready(function () {
+        $(".Skinessentials").click(function () {
+            if ($(".menu1 ul").css("display") == "none") {
+                $(".menu1 ul").css("display", "block")
+                $(".menu1 ul").animate({ height: 92 }, "slow")
+                $(".col-3 p i").attr("class", "fa-solid fa-chevron-up")
+            } else {
+                $(".menu1 ul").animate({ height: 0 }, "slow")
+                $(".col-3 p i").attr("class", "fa-solid fa-chevron-down")
+                setTimeout(function(){
+                    $(".menu1 ul").css("display", "none")
+                },500)
+                
+
+            }
+        })
+        for (var i = 0; i < environs.length; i++) {
+            $(`.col-9`).append(`<div class="col-4"></div>`)
+            $(`.col-9 .col-4:nth-child(${i + 1})`).html(`
+            <div class="product-content">
+                    <div>
+                        <a href="#">
+                            <img src="${environs[i].img}"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="NameProduct text-start">${environs[i].name}</h3>
+                        <h3 class="Money text-start">${environs[i].price}</h3>
+                        <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3">Add to cart</button>
+                    </div>
+                </div>
+            `)
+        }
+    })
+
+
+    var dola = 1.19;
+    var environs = [
+        {
+            img: "./assets/Img/products/environ/NEW_Environ_Starter_Kit-905x643-7fc31b26-4ed7-432f-a28a-9889b5fed00c.png",
+            name: "Environ Starter Kit",
+            price: `${109 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/14042016-193659-youth-essentia-eye-gel-905x1280-9aa30ff4-8fe1-4c1f-9742-9dbc0a2f3a1d.png",
+            name: "Environ Vita-Peptide Eye Gel ",
+            price: `${59 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/08092016-174826-skin_essentia_avst_moisturiser_1.png",
+            name: "Environ Vita-Antioxidant AVST1 Moisturiser",
+            price: `${50 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/08092016-174856-skin_essentia_avst_moisturiser_3-905x1280-d5d6c9f9-890e-405b-93a5-aacec039672e.png",
+            name: "Environ Vita-Antioxidant AVST3 Moisturiser",
+            price: `${50 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/11042018-144009-sebu-wash-gel-cleanser-copy-905x1744-d085b030-26d4-482b-9991-543aaad32520.jpg",
+            name: "Environ Sebu-Wash",
+            price: `${31 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/se_low_foam_cleansing_gel-205x878-ee0c4d18-3c55-44fd-b467-1f97c826b7e5.png",
+            name: "Environ Low Foam Cleansing Gel",
+            price: `${39 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/ENV057.jpg",
+            name: "Environ RAD SPF15",
+            price: `${22 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/ENV012.jpg",
+            name: "Environ Vita-Antioxidant AVST4 Moisturiser",
+            price: `${57 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/ENV038.jpg",
+            name: "Environ Vita-Enriched Colostrum Gel",
+            price: `${38 * dola}$`
+        },
+    ]
+
+
+</script>

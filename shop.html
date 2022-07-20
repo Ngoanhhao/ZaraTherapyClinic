@@ -41,8 +41,8 @@
                 <p class="w-100 Skinessentials d-flex justify-content-between ">Skin essentials<i
                         class="fa-solid fa-chevron-down"></i></p>
                 <ul>
-                    <li><a class="alert" href="#">Environ</a></li>
-                    <li><a class="alert" href="#">Murad</a></li>
+                    <li><a class="alert environ">Environ</a></li>
+                    <li><a class="alert murad">Murad</a></li>
                 </ul>
             </div>
 
@@ -56,44 +56,7 @@
         </div>
         <!-- products -->
         <div class="col-9 row">
-            <!-- <div class="col-4">
-                <div class="product-content">   
-                    <div>
-                        <a href="#">
-                            <img src="./assets/Img/products/environ/NEW_Environ_Starter_Kit-905x643-7fc31b26-4ed7-432f-a28a-9889b5fed00c.png"
-                                alt="">
-                        </a>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="NameProduct text-start">Environ Starter Kit</h3>
-                        <h3 class="Money text-start">119.00$</h3>
-                        <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="product-content">
-                    <div>
-                        <a href="#">
-                            <img src="./assets/Img/products/environ/14042016-193659-youth-essentia-eye-gel-905x1280-9aa30ff4-8fe1-4c1f-9742-9dbc0a2f3a1d.png"
-                                alt="">
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="product-content">
-                    <div>
-                        <a href="#">
-                            <img src="./assets/Img/products/environ/08092016-174826-skin_essentia_avst_moisturiser_1.png"
-                                alt="">
-                        </a>
-                    </div>
-                </div>
-            </div> -->
+           
         </div>
     </div>
 
@@ -129,11 +92,12 @@
             } else {
                 $(".menu1 ul").animate({ height: 0 }, "slow")
                 $(".col-3 p i").attr("class", "fa-solid fa-chevron-down")
-                setTimeout(function(){
+                setTimeout(function () {
                     $(".menu1 ul").css("display", "none")
-                },500)
+                }, 500)
             }
         })
+
         for (var i = 0; i < environs.length; i++) {
             $(`.col-9`).append(`<div class="col-4"></div>`)
             $(`.col-9 .col-4:nth-child(${i + 1})`).html(`
@@ -152,14 +116,65 @@
                 </div>
             `)
         }
-        $(".product-content a").click(function(){
-            localStorage.setItem("IdPage",$(this).attr("class"))
+        $(".environ").click(function () {
+            $(".products .col-3 ul li a").css("background","white")
+            $(".products .col-3 ul li a").css("color","black")
+            $(".environ").css("background","#8abcf5")
+            $(".environ").css("color","white")
+            $(".products .col-9").html("");
+            for (var i = 0; i < environs.length; i++) {
+                $(`.col-9`).append(`<div class="col-4"></div>`)
+                $(`.col-9 .col-4:nth-child(${i + 1})`).html(`
+                <div class="product-content">
+                    <div>
+                        <a href="./dataProducts.html" data-a="${i}" class="${i}">
+                            <img src="${environs[i].img}"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="NameProduct text-start">${environs[i].name}</h3>
+                        <h3 class="Money text-start">${environs[i].price}</h3>
+                        <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3">Add to cart</button>
+                    </div>
+                </div>
+            `)
+            }
+        })
+        $(".murad").click(function () {
+            $(".products .col-3 ul li a").css("background","white")
+            $(".products .col-3 ul li a").css("color","black")
+            $(".murad").css("background","#8abcf5")
+            $(".murad").css("color","white")
+            $(".products .col-9").html("");
+            for (var i = 0; i < murad.length; i++) {
+                $(`.col-9`).append(`<div class="col-4"></div>`)
+                $(`.col-9 .col-4:nth-child(${i + 1})`).html(`
+                <div class="product-content">
+                    <div>
+                        <a href="./dataProducts.html" data-a="${i}" class="${i}">
+                            <img src="${murad[i].img}"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="NameProduct text-start">${murad[i].name}</h3>
+                        <h3 class="Money text-start">${murad[i].price}</h3>
+                        <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3">Add to cart</button>
+                    </div>
+                </div>
+            `)
+            }
+        })
+
+        $(".product-content a").click(function () {
+            localStorage.setItem("IdPage", $(this).attr("class"))
         })
 
     })
 
 
-    
+
 
 
 

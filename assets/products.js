@@ -56,3 +56,53 @@ var dola = 1.19;
             price: `${38 * dola}$`
         },
     ]  
+var murad = [
+    {
+        img:"./assets/Img/products/murad/80256.jpg",
+        saleimg:"",
+        name:"Murad Essential C Day Moisture SPF 30",
+        price: `${65 * dola}$`
+    },
+    {
+        img:"./assets/Img/products/murad/80268.jpg",
+        saleimg:"",
+        name:"Murad Perfecting Day Cream SPF30",
+        price: `${51 * dola}$`
+    },
+    {
+        img:"./assets/Img/products/murad/80294.jpg",
+        saleimg:"",
+        name:"Murad Refreshing Cleanser",
+        price: `${34 * dola}$`
+    },
+    {
+        img:"./assets/Img/products/murad/80270.jpg",
+        saleimg:"",
+        name:"Murad Essential C Cleanser",
+        price: `${34 * dola}$`
+    },
+    {
+        img:"./assets/Img/products/murad/80019.jpg",
+        saleimg:"",
+        name:"Murad Nutrient Charged Water Gel",
+        price: `${53 * dola}$`
+    },
+    {
+        img:"./assets/Img/products/murad/80408.png",
+        saleimg:"",
+        name:"Murad Hydro-Dynamic Ultimate Moisture for Eyes",
+        price: `${58 * dola}$`
+    },
+    {
+        img:"./assets/Img/products/murad/80689.jpg",
+        saleimg:"",
+        name:"Murad Clarifying Mask",
+        price: `${41 * dola}$`
+    },
+    {
+        img:"./assets/Img/products/murad/RSG_Renewing_Cleansing_Cream_6.75oz_GBL-HR-600x1018.jpg",
+        saleimg:"",
+        name:"Murad Renewing Cleasing Cream",
+        price: `${34 * dola}$`
+    },
+]

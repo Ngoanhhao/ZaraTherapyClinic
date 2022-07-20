@@ -57,7 +57,7 @@
         <!-- products -->
         <div class="col-9 row">
             <!-- <div class="col-4">
-                <div class="product-content">
+                <div class="product-content">   
                     <div>
                         <a href="#">
                             <img src="./assets/Img/products/environ/NEW_Environ_Starter_Kit-905x643-7fc31b26-4ed7-432f-a28a-9889b5fed00c.png"
@@ -92,7 +92,6 @@
                                 alt="">
                         </a>
                     </div>
-
                 </div>
             </div> -->
         </div>
@@ -113,6 +112,7 @@
 <script src="./assets/signup.js"></script>
 <script src="./assets/footer.js"></script>
 <script src="./assets/countUp/countUp.js"></script>
+<script src="./assets/products.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
 
@@ -132,8 +132,6 @@
                 setTimeout(function(){
                     $(".menu1 ul").css("display", "none")
                 },500)
-                
-
             }
         })
         for (var i = 0; i < environs.length; i++) {
@@ -141,7 +139,7 @@
             $(`.col-9 .col-4:nth-child(${i + 1})`).html(`
             <div class="product-content">
                     <div>
-                        <a href="#">
+                        <a href="/dataProducts.html" data-a="${i}" class="${i}">
                             <img src="${environs[i].img}"
                                 alt="">
                         </a>
@@ -154,57 +152,15 @@
                 </div>
             `)
         }
+        $(".product-content a").click(function(){
+            localStorage.setItem("IdPage",$(this).attr("class"))
+        })
+
     })
 
 
-    var dola = 1.19;
-    var environs = [
-        {
-            img: "./assets/Img/products/environ/NEW_Environ_Starter_Kit-905x643-7fc31b26-4ed7-432f-a28a-9889b5fed00c.png",
-            name: "Environ Starter Kit",
-            price: `${109 * dola}$`
-        },
-        {
-            img: "./assets/Img/products/environ/14042016-193659-youth-essentia-eye-gel-905x1280-9aa30ff4-8fe1-4c1f-9742-9dbc0a2f3a1d.png",
-            name: "Environ Vita-Peptide Eye Gel ",
-            price: `${59 * dola}$`
-        },
-        {
-            img: "./assets/Img/products/environ/08092016-174826-skin_essentia_avst_moisturiser_1.png",
-            name: "Environ Vita-Antioxidant AVST1 Moisturiser",
-            price: `${50 * dola}$`
-        },
-        {
-            img: "./assets/Img/products/environ/08092016-174856-skin_essentia_avst_moisturiser_3-905x1280-d5d6c9f9-890e-405b-93a5-aacec039672e.png",
-            name: "Environ Vita-Antioxidant AVST3 Moisturiser",
-            price: `${50 * dola}$`
-        },
-        {
-            img: "./assets/Img/products/environ/11042018-144009-sebu-wash-gel-cleanser-copy-905x1744-d085b030-26d4-482b-9991-543aaad32520.jpg",
-            name: "Environ Sebu-Wash",
-            price: `${31 * dola}$`
-        },
-        {
-            img: "./assets/Img/products/environ/se_low_foam_cleansing_gel-205x878-ee0c4d18-3c55-44fd-b467-1f97c826b7e5.png",
-            name: "Environ Low Foam Cleansing Gel",
-            price: `${39 * dola}$`
-        },
-        {
-            img: "./assets/Img/products/environ/ENV057.jpg",
-            name: "Environ RAD SPF15",
-            price: `${22 * dola}$`
-        },
-        {
-            img: "./assets/Img/products/environ/ENV012.jpg",
-            name: "Environ Vita-Antioxidant AVST4 Moisturiser",
-            price: `${57 * dola}$`
-        },
-        {
-            img: "./assets/Img/products/environ/ENV038.jpg",
-            name: "Environ Vita-Enriched Colostrum Gel",
-            price: `${38 * dola}$`
-        },
-    ]
+    
+
 
 
 </script>

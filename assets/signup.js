@@ -279,7 +279,7 @@ function signinSuccess() {
     )}</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><a class="dropdown-item" href="#">My account</a></li>
-    <li><a class="dropdown-item" href="#">Shoping cart</a></li>
+    <li><a class="dropdown-item" href="./cart.html">Shoping cart</a></li>
     <li><a class="dropdown-item logout" href="#">Log out</a></li>
   </ul>
   `);

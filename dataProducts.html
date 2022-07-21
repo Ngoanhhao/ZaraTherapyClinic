@@ -57,12 +57,16 @@
 <script src="./assets/countUp/countUp.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-    $(document).ready(function(){
-        if(!sessionStorage.getItem("Id")){
-            sessionStorage.setItem("Id",localStorage.getItem("IdPage"));
+    $(document).ready(function () {
+        if (!sessionStorage.getItem("Id")) {
+            sessionStorage.setItem("Id", localStorage.getItem("IdPage"));
+            sessionStorage.setItem("Name", localStorage.getItem("NamePage"));
         }
         var id = sessionStorage.getItem("Id");
-        $(".DataProduct").html(`
+        var Name = sessionStorage.getItem("Name");
+        switch (Name) {
+            case "environs":
+                $(".DataProduct").html(`
             <div class="text-center">
                 <a href="#">
                     <img src="${environs[id].saleimg}"
@@ -83,7 +87,59 @@
                 <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3">Add to cart</button>
             </div>
         `)
- 
+                break;
+            case "murad":
+                $(".DataProduct").html(`
+                <div class="text-center">
+                    <a href="#">
+                        <img src="${murad[id].img}"
+                            alt="">
+                    </a>
+                </div>
+                <div class="product-info-content">
+                    <h3 class="NameProduct text-start">${murad[id].name}</h3>
+                    <h3 class="Money text-start">${murad[id].price}</h3>
+                    <div class="d-flex justify-content-between">  
+                        <p class="s-14 pt-3">Quality:</p>
+                        <div class="btn-group" role="group" aria-label="Basic outlined example">
+                            <button type="button" class="btn btn-outline-primary s-16">-</button>
+                            <input type="number" class="text-center s-16" name="" id="" value="1">
+                            <button type="button" class="btn btn-outline-primary s-16">+</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3">Add to cart</button>
+                </div>
+            `)
+                break;
+            case "equipments":
+                $(".DataProduct").html(`
+                <div class="text-center">
+                    <a href="#">
+                        <img src="${equipments[id].img}"
+                            alt="">
+                    </a>
+                </div>
+                <div class="product-info-content">
+                    <h3 class="NameProduct text-start">${equipments[id].name}</h3>
+                    <h3 class="Money text-start">${equipments[id].price}</h3>
+                    <div class="d-flex justify-content-between">  
+                        <p class="s-14 pt-3">Quality:</p>
+                        <div class="btn-group" role="group" aria-label="Basic outlined example">
+                            <button type="button" class="btn btn-outline-primary s-16">-</button>
+                            <input type="number" class="text-center s-16" name="" id="" value="1">
+                            <button type="button" class="btn btn-outline-primary s-16">+</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3">Add to cart</button>
+                </div>
+            `)
+                break;
+
+            default:
+                break;
+        }
+
+
         $(".product-info div[class=btn-group] button:first-child").click(function () {
             $(".product-info div[class=btn-group] input").val(parseInt($(".product-info div[class=btn-group] input").val()) - 1)
             if ($(".product-info div[class=btn-group] input").val() < 1) {
@@ -93,11 +149,11 @@
         $(".product-info div[class=btn-group] button:last-child").click(function () {
             $(".product-info div[class=btn-group] input").val(parseInt($(".product-info div[class=btn-group] input").val()) + 1)
         })
-    
+
         AOS.init({
             duration: 2000,
         });
-        
+
     })
 
 

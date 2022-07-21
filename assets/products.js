@@ -59,50 +59,107 @@ var dola = 1.19;
 var murad = [
     {
         img:"./assets/Img/products/murad/80256.jpg",
-        saleimg:"",
+        saleimg:"./assets/Img/products/murad/80256.jpg",
         name:"Murad Essential C Day Moisture SPF 30",
         price: `${65 * dola}$`
     },
     {
         img:"./assets/Img/products/murad/80268.jpg",
-        saleimg:"",
+        saleimg:"./assets/Img/products/murad/80268.jpg",
         name:"Murad Perfecting Day Cream SPF30",
         price: `${51 * dola}$`
     },
     {
         img:"./assets/Img/products/murad/80294.jpg",
-        saleimg:"",
+        saleimg:"./assets/Img/products/murad/80294.jpg",
         name:"Murad Refreshing Cleanser",
         price: `${34 * dola}$`
     },
     {
         img:"./assets/Img/products/murad/80270.jpg",
-        saleimg:"",
+        saleimg:"./assets/Img/products/murad/80270.jpg",
         name:"Murad Essential C Cleanser",
         price: `${34 * dola}$`
     },
     {
         img:"./assets/Img/products/murad/80019.jpg",
-        saleimg:"",
+        saleimg:"./assets/Img/products/murad/80019.jpg",
         name:"Murad Nutrient Charged Water Gel",
         price: `${53 * dola}$`
     },
     {
         img:"./assets/Img/products/murad/80408.png",
-        saleimg:"",
+        saleimg:"./assets/Img/products/murad/80408.png",
         name:"Murad Hydro-Dynamic Ultimate Moisture for Eyes",
         price: `${58 * dola}$`
     },
     {
         img:"./assets/Img/products/murad/80689.jpg",
-        saleimg:"",
+        saleimg:"./assets/Img/products/murad/80689.jpg",
         name:"Murad Clarifying Mask",
         price: `${41 * dola}$`
     },
     {
         img:"./assets/Img/products/murad/RSG_Renewing_Cleansing_Cream_6.75oz_GBL-HR-600x1018.jpg",
-        saleimg:"",
+        saleimg:"./assets/Img/products/murad/RSG_Renewing_Cleansing_Cream_6.75oz_GBL-HR-600x1018.jpg",
         name:"Murad Renewing Cleasing Cream",
         price: `${34 * dola}$`
     },
+]
+var equipments = [
+    {
+        img: "./assets/Img/Equipment/Best-New-Sensitive-and-Precisely-Control-Hand-Rehabilitation-Robot-Hand-Physiotherapy-Equipment.webp",
+        name: "Best New Sensitive and Precisely Control Hand Rehabilitation Robot Hand Physiotherapy Equipment",
+        price: `${350}$`
+    },
+    {
+        img: "./assets/Img/Equipment/Best-Public-Use-Shopping-Mall-Body-Care-Physical-Massage-Chair-Equipment.webp",
+        name: "Best Public Use Shopping Mall Body Care Physical Massage Chair Equipment",
+        price: `${650}$`
+    },
+    {
+        img: "./assets/Img/Equipment/Body-Massage-Physical-Therapy-Devices-Pain-Relief-Physiotherapy-Medical-Supplies-Physiotherapy-Therapy-Equipment.webp",
+        name: "Body Massage Physical Therapy Devices Pain Relief Physiotherapy Medical Supplies Physiotherapy Therapy Equipment",
+        price: `${45}$`
+    },
+    {
+        img: "./assets/Img/Equipment/Home-Cervical-and-Lumbar-Nursing-Low-Frequency-Medium-Frequency-Pulse-Physiotherapy-Device.webp",
+        name: "Home Cervical and Lumbar Nursing Low-Frequency Medium-Frequency Pulse Physiotherapy Device",
+        price: `${134}$`
+    },
+    {
+        img: "./assets/Img/Equipment/Home-Use-and-Clinic-Use-Medical-Therapy-Machine-for-Diabetic-Complication.webp",
+        name: "Home Use and Clinic Use Medical Therapy Machine for Diabetic Complication",
+        price: `${700}$`
+    },
+    {
+        img: "./assets/Img/Equipment/Laser-Medical-Device-Knee-Physiotherapy-Equipments-Cold-Laser-Therapy-for-Pain.webp",
+        name: "Laser Medical Device Knee Physiotherapy Equipments Cold Laser Therapy for Pain",
+        price: `${99}$`
+    },
+    {
+        img: "./assets/Img/Equipment/Medical-Equipment-for-Physiotherapy-to-Vaginal-Relaxation.webp",
+        name: "Medical Equipment for Physiotherapy to Vaginal Relaxation",
+        price: `${3000}$`
+    },
+    {
+        img: "./assets/Img/Equipment/Neck-Cervical-Spine-Pain-Relief-Lllt-Low-Level-Laser-Therapy-Acupuncture-Device-Physiotherapy-Equipment.webp",
+        name: "Neck Cervical Spine Pain Relief Lllt Low Level Laser Therapy Acupuncture Device Physiotherapy Equipment",
+        price: `${160}$`
+    },
+    {
+        img: "./assets/Img/Equipment/Physiotherapy-Equipment-Machine-Portable-Oxygen-Bar-Equipment-Concentration-Device-Household-Oxygenconcentrator.webp",
+        name: "Physiotherapy Equipment Machine Portable Oxygen Bar Equipment Concentration Device Household Oxygenconcentrator",
+        price: `${450}$`
+    },
+    {
+        img: "./assets/Img/Equipment/Physiotherapy-Equipment-Muscle-Relax-Pain-Relieve-Equipment.webp",
+        name: "Physiotherapy Equipment Muscle Relax Pain Relieve Equipment",
+        price: `${2000}$`
+    },
+    {
+        img: "./assets/Img/Equipment/Sport-Injuries-Joint-Pain-Relief-Extracorporeal-Therapy-Electromagnetic-Physio-Magneto-Physiotherapy-Equipment.webp",
+        name: " Sport Injuries Joint Pain Relief Extracorporeal Therapy Electromagnetic Physio Magneto Physiotherapy Equipment",
+        price: `${2099}$`
+    }
 ]

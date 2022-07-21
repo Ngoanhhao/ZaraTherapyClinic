@@ -106,7 +106,7 @@
         var IDshop = sessionStorage.getItem("IDshop")
         switch (IDshop) {
             case "environs":
-                // localStorage.setItem("NamePage", "environs")
+                localStorage.setItem("NamePage", "environs")
                 for (var i = 0; i < environs.length; i++) {
                     $(`.col-9`).append(`<div class="col-4"></div>`)
                     $(`.col-9 .col-4:nth-child(${i + 1})`).html(`
@@ -175,7 +175,7 @@
                 break;
 
             default:
-                // localStorage.setItem("NamePage", "environs")
+                localStorage.setItem("NamePage", "environs")
                 for (var i = 0; i < environs.length; i++) {
                     $(`.col-9`).append(`<div class="col-4"></div>`)
                     $(`.col-9 .col-4:nth-child(${i + 1})`).html(`

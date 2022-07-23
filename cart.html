@@ -39,6 +39,7 @@
                 <p class="s-14">Your Selected Items</p>
                 <hr>
             </div>
+
             <div class="list-item">
                 <!-- <div class="cart-item">
                             <div>
@@ -51,10 +52,13 @@
                             </div>
                         </div> -->
             </div>
-            <hr>
-            <div class="cart-bot pt-2 d-flex justify-content-between">
-                <h2>Total</h2>
-                <h2>69$</h2>
+            <div class="cart-bot-container">
+                <h2 class="text-center empty">Your bag is empty</h2>
+                <hr>
+                <div class="cart-bot pt-2 justify-content-between">
+                    <h2>Total</h2>
+                    <h2>0$</h2>
+                </div>
             </div>
         </div>
         <button type="button" class="btn d-block m-auto proceed w-100 mt-4">
@@ -84,16 +88,85 @@
     AOS.init({
         duration: 2000,
     });
-    // $().attr
 
     $(document).ready(function () {
+        var IDproducts = JSON.parse(localStorage.getItem("IDproducts"));
+        var Prices = [];
+        var Newproduct = [];
+        var id;
+        var total = 0;
+        // 
+        for (let i = 0; i < IDproducts.length; i++) {
+            Newproduct[i] = JSON.parse(localStorage.getItem(IDproducts[i]))
+
+            var name = Newproduct[i].name;
+            id = Newproduct[i].id;
+            switch (name) {
+                case "environs":
+                    $(".list-item").append(`<div class="cart-item d-flex justify-content-between"></div>`)
+                    $(`.cart-item:nth-child(${i + 1})`).html(`
+                <div>
+                    <h3>${environs[id].name}</h3>
+                    <p>Quantity: ${Newproduct[i].quatity}</p>
+                </div>
+                <div>
+                    <h3>${Prices[i] = parseInt(environs[id].price) * parseInt(Newproduct[i].quatity)}$</h3>
+                    <p>remove</p>
+                </div>
+                `)
+                    break;
+                case "murad":
+                    $(".list-item").append(`<div class="cart-item d-flex justify-content-between"></div>`)
+                    $(`.cart-item:nth-child(${i + 1})`).html(`
+                <div>
+                    <h3>${murad[id].name}</h3>
+                    <p>Quantity: ${Newproduct[i].quatity}</p>
+                </div>
+                <div>
+                    <h3>${Prices[i] = parseInt(murad[id].price) * parseInt(Newproduct[i].quatity)}$</h3>
+                    <p>remove</p>
+                </div>
+                `)
+                    break;
+                case "equipments":
+                    $(".list-item").append(`<div class="cart-item d-flex justify-content-between"></div>`)
+                    $(`.cart-item:nth-child(${i + 1})`).html(`
+                <div>
+                    <h3>${equipments[id].name}</h3>
+                    <p>Quantity: ${Newproduct[i].quatity}</p>
+                </div>
+                <div>
+                    <h3 class="m-2">${Prices[i] = parseInt(equipments[id].price) * parseInt(Newproduct[i].quatity)}$</h3>
+                    <p>remove</p>
+                </div>
+                `)
+                    break;
+            }
+            total += Prices[i];
+            $(".cart-bot h2:last-child").html(`${total}$`)
+        }
+
+
+        // 
+        if ($(".cart-item").text()) {
+            $(".cart-bot, .cart-bot-container hr").css("display", "flex")
+            $(".cart-bot-container .empty").hide()
+        }
+
+        // xác nhận mua sản phẩm
         $(".proceed").click(function () {
-            localStorage.setItem("cart", "")
-            location.reload();
+            location.reload()
+
+            for (let i = 0; i <= IDproducts.length; i++) {
+                Newproduct[i] = JSON.parse(localStorage.getItem(IDproducts[i]))
+                localStorage.removeItem("QuatityProduct")
+                localStorage.removeItem("IDproducts")
+                localStorage.removeItem(Newproduct[i].id)
+            }
         })
+
     })
 
-// kiểm tra coockie -> k có thì tạo vs user là tên đăng nhập
 
 
 

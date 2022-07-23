@@ -1,4 +1,4 @@
-var dola = 1.19;
+var dola = 1;
     var environs = [
         {
             img: "./assets/Img/products/environ/NEW_Environ_Starter_Kit-905x643-7fc31b26-4ed7-432f-a28a-9889b5fed00c.png",
@@ -55,6 +55,49 @@ var dola = 1.19;
             name: "Environ Vita-Enriched Colostrum Gel",
             price: `${38 * dola}$`
         },
+        {
+            img: "./assets/Img/products/environ/Environ_Vita-Antioxidant_AVST5_Moisturiser.png",
+            saleimg:"./assets/Img/products/environ/Environ_Vita-Antioxidant_AVST5_Moisturiser.png",
+            name: "Environ Vita-Antioxidant AVST5 Moisturiser",
+            price: `${57 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/Environ_Vita-Complex_Super_Moisturiser.png",
+            saleimg:"./assets/Img/products/environ/Environ_Vita-Complex_Super_Moisturiser.png",
+            name: "Environ Vita-Complex Super Moisturiser",
+            price: `${33 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/Environ_Sebu-Lac.png",
+            saleimg:"./assets/Img/products/environ/Environ_Sebu-Lac.png",
+            name: "Environ Sebu-Lac",
+            price: `${33 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/Environ_Sebu-ACE_Oil.png",
+            saleimg:"./assets/Img/products/environ/Environ_Sebu-ACE_Oil.png",
+            name: "Environ Sebu-ACE Oil",
+            price: `${39 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/Environ_Vita-Antioxidant_Hydrating_Oil_Capsules.png",
+            saleimg:"./assets/Img/products/environ/Environ_Vita-Antioxidant_Hydrating_Oil_Capsules.png",
+            name: "Environ Vita-Antioxidant Hydrating Oil Capsules",
+            price: `${49 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/Environ_Botanical_Infused_Moisturising_Toner.png",
+            saleimg:"./assets/Img/products/environ/Environ_Botanical_Infused_Moisturising_Toner.png",
+            name: "Environ Botanical Infused Moisturising Toner",
+            price: `${39 * dola}$`
+        },
+        {
+            img: "./assets/Img/products/environ/200ml-derma-lac-lotion.png",
+            saleimg:"./assets/Img/products/environ/200ml-derma-lac-lotion.png",
+            name: "Environ Derma-Lac Lotion",
+            price: `${42 * dola}$`
+        },
+
     ]  
 var murad = [
     {

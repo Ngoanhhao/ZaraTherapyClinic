@@ -4,12 +4,12 @@
     margin: 5% auto 0 auto !important;
 }
 
-.products div:last-child .col-4 img{
+.products div:last-child .col-3 img{
     height: 100%;
     width: auto;
     margin: 10px;
 }
-.products div:last-child .col-4{
+.products div:last-child .col-3{
     text-align: center;
     margin-bottom: 10px;
 }
@@ -39,11 +39,23 @@
     border-color: #57a2f7;
 }
 /* menu */
+.btn-products{    
+    width: 100%;
+    height: 100%;
+    padding: 5px 20px;
+    border: 1px solid #5ea2ef !important;
+    border-radius: 7px !important;
+}
+.menu-products{
+    width: 92%;
+    display: none;
+}
 .products div:first-child input{
     padding: 5px 20px;
-    margin-bottom: 10px;
-    border: 1px solid #5ea2ef;
-    border-radius: 7px;
+    border: 1px solid #5ea2ef !important;
+    border-radius: 7px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
 }
 .products div:first-child input:focus{
     border: 1px solid #5ea2ef !important;
@@ -55,34 +67,49 @@
     list-style-type: none;
     padding-left: 0 !important;
 }
-.products .col-3 p,
-.products .col-3 a{
+.products .col-12 p,
+.products .col-12 a{
     margin: 0%;
     font-size: 1.8rem;
     text-decoration: none;
-    padding: 10px;
     display: block;
 }
-.products .col-3 p::selection,
-.products .col-3 a::selection{
+.products .col-12 p::selection,
+.products .col-12 a::selection{
     background-color: transparent;
 }
-.products .col-3 p:hover,
-.products .col-3 a:hover{
+.products .col-12:first-child p:hover,
+.products .col-12:first-child a:hover{
     cursor: pointer;
-    background-color: #8abcf5;
     color: white;
 }
-.products .col-3 a{
+.products .col-12 a{
     font-weight: 300;
     font-size: 1.6rem;
 }
-.products .col-3 ul{
+.products .col-12 ul{
     display: none;
     height: 0;
     z-index: 1;
     overflow: hidden;
     margin-bottom: 0;
+}
+#nameinfo:hover,
+.menu-products .dropdown-item:hover{
+    cursor: pointer;
+    background-color: rgba(187, 227, 250, 0.4)
+}
+.search{
+    width: 50px;
+    border: 1px solid #5ea2ef !important;
+    border-radius: 7px !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0% !important;
+    background-color: transparent;
+    font-size: 18px;
+    border-left: none !important;
+    padding-top: 3px;
+    opacity: 0.6;
 }
 
 /* product info */
@@ -96,6 +123,11 @@
 }
 .product-info .product-content div:first-child{
     text-align: center;
+}
+
+.product-content a{
+    width: 100%;
+    height: 100%;
 }
 
 .product-info div[class=btn-group] button,
@@ -127,6 +159,9 @@
     background-color: #8abcf5;
     border-color: #57a2f7;
     color: white;
+}
+.equipmentsname h3:first-child{
+    height: 60px;
 }
 /* dataproduct */
 .DataProduct img{
@@ -171,6 +206,11 @@
     font-weight: 600;
     border: 1px solid #8abcf5;
     box-shadow: 0px 0px 3px #8abcf5;
+}
+.cart-bot-container hr,
+.cart-bot-container .cart-bot
+{
+    display: none;
 }
 
 /* nummber input edit */

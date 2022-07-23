@@ -83,7 +83,7 @@ $(document).ready(function(){
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./shop.html">Shopping</a>
+          <a class="nav-link active" aria-current="page" href="./shop.html">Products</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="./contact.html">Contact</a>
@@ -91,6 +91,7 @@ $(document).ready(function(){
       </ul>
       <!-- sign -->
       <div class="d-flex DN justify-content-end p-3" role="search" method="">
+        <a href="./cart.html" target="_blank"><i class="fa-solid fa-cart-shopping s-18"></i></a>
         <button class="border-0 container-search_btn border-bottom s-14 m-2 signin" type="button">Sign in</button>
       </div>
     </div>

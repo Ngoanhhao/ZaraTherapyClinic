@@ -241,6 +241,13 @@ $(document).ready(function () {
     $("#male").removeAttr("checked");
     $("#female").attr("checked", "checked");
   });
+
+  $("#avatar,.account-content").mouseover(function(){
+    $(".account-content").show()
+    $(this).mouseout(function(){
+      $(".account-content").hide()
+    })
+  })
 });
 
 function guest(user, pass, name) {
@@ -269,10 +276,11 @@ function signin() {
   }
 }
 
+
 function signinSuccess() {
   $(".DN").html(`
-  <img width="15%" src="assets/Img/avatar.png"> 
-  
+  <a href="./cart.html" target="_blank"><i class="fa-solid fa-cart-shopping s-18"></i></a>
+  <img id="avatar" width="15%" src="assets/Img/avatar.png"> 
   <ul class="dropdown-menu account-content">
     <li class="text-center"><a class="dropdown-item" id="nameinfo" href="#">${localStorage.getItem(
       "DN"

@@ -33,32 +33,28 @@
 
     <!-- BODY -->
 
-    <div class="products d-flex row">
+    <div class="products d-flex row flex-column">
         <!-- menu left -->
-        <div class="col-3">
-            <input class="form-control text-center s-16" type="text" placeholder="Search" aria-label="Search">
-            <div class="s-16 menu1">
-                <p class="w-100 Skinessentials d-flex justify-content-between ">Skin essentials<i
-                        class="fa-solid fa-chevron-down"></i></p>
-                <ul>
-                    <li><a class="alert environ">Environ</a></li>
-                    <li><a class="alert murad">Murad</a></li>
-                </ul>
+        <div class="col-12 row">
+            <div class="col-10 d-flex">
+                <input class="form-control s-16" type="text" placeholder="Search" aria-label="Search">
+                <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-
-            <!-- <div class="s-16 menu2">
-                <p class="w-100">Essential oil</p>
-                <ul class="">
-                    <li><a class="alert" href="#"></a></li>
-                    <li><a class="alert" href="#"></a></li>
+            <div class="col-2 dropdown">
+                <button class="btn btn-products s-14" type="button">
+                    Dropdown button <i class="fa-solid fa-angle-down"></i>
+                  </button>
+                <ul class="dropdown-menu h-auto menu-products" aria-labelledby="dropdownMenuButton1">
+                    <li class="dropdown-item w-100 Skinessentials d-flex justify-content-between" id="nameinfo">Skin essentials
+                    </li>
+                    <li class="dropdown-item"><a class="environ">Environ</a></li>
+                    <li class="dropdown-item"><a class="murad">Murad</a></li>
+                    <li class="s-16 menu3 dropdown-item Equipment" id="nameinfo">Equipment</li>
                 </ul>
-            </div> -->
-            <div class="s-16 menu3">
-                <p class="w-100 Equipment">Equipment</p>
             </div>
         </div>
         <!-- products -->
-        <div class="col-9 row">
+        <div class="col-12 row mt-3">
 
         </div>
     </div>
@@ -87,29 +83,12 @@
     });
     // $().attr
     $(document).ready(function () {
-        // menu
-        $(".Skinessentials").click(function () {
-            if ($(".menu1 ul").css("display") == "none") {
-                $(".menu1 ul").css("display", "block")
-                $(".menu1 ul").animate({ height: 92 }, "slow")
-                $(".col-3 p i").attr("class", "fa-solid fa-chevron-up")
-            } else {
-                $(".menu1 ul").animate({ height: 0 }, "slow")
-                $(".col-3 p i").attr("class", "fa-solid fa-chevron-down")
-                setTimeout(function () {
-                    $(".menu1 ul").css("display", "none")
-                }, 500)
-            }
-        })
-
-        // product info
-        var IDshop = sessionStorage.getItem("IDshop")
-        switch (IDshop) {
-            case "environs":
-                localStorage.setItem("NamePage", "environs")
-                for (var i = 0; i < environs.length; i++) {
-                    $(`.col-9`).append(`<div class="col-4"></div>`)
-                    $(`.col-9 .col-4:nth-child(${i + 1})`).html(`
+        localStorage.setItem("NamePage", "environs")
+        sessionStorage.setItem("IDshop", "environs")
+        localStorage.setItem("NamePage", "environs")
+        for (var i = 0; i < environs.length; i++) {
+            $(`.col-12:last-child`).append(`<div class="col-3"></div>`)
+            $(`.col-12:last-child .col-3:nth-child(${i + 1})`).html(`
                 <div class="product-content">
                         <div>
                             <a href="./dataProducts.html" target="_blank" data-id="${i}" data-name="environs">
@@ -119,20 +98,51 @@
                         </div>
                         <div class="p-4">
                             <h3 class="NameProduct text-start">${environs[i].name}</h3>
-                            <h3 class="Money text-start">${environs[i].price}</h3>
-                            <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="environs">Add to cart</button>
+                            <p class="d-inline-block">Price: </p><h3 class="Money text-start d-inline-block" style="color: #0d6efd;"> ${environs[i].price}</h3>
+                            <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="environs" data-quality="0">Add to cart</button>
                         </div>
                     </div>
                 `)
-                }
-                sessionStorage.setItem("IDshop", "environs")
-                break;
+        }
+        reloadd()
 
-            case "murad":
-                $(".products .col-9").html("");
-                for (var i = 0; i < murad.length; i++) {
-                    $(`.col-9`).append(`<div class="col-4"></div>`)
-                    $(`.col-9 .col-4:nth-child(${i + 1})`).html(`
+
+        // menu
+        
+
+
+        $(".environ").click(function () {
+            localStorage.setItem("NamePage", "environs")
+            sessionStorage.setItem("IDshop", "environs")
+            $(".products .col-12:last-child").html("");
+            for (var i = 0; i < environs.length; i++) {
+                $(`.col-12:last-child`).append(`<div class="col-3"></div>`)
+                $(`.col-12:last-child .col-3:nth-child(${i + 1})`).html(`
+                <div class="product-content">
+                        <div>
+                            <a href="./dataProducts.html" target="_blank" data-id="${i}" data-name="environs">
+                                <img src="${environs[i].img}"
+                                    alt="">
+                            </a>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="NameProduct text-start">${environs[i].name}</h3>
+                            <p class="d-inline-block">Price: </p><h3 class="Money text-start d-inline-block" style="color: #0d6efd;"> ${environs[i].price}</h3>
+                            <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="environs" data-quality="0">Add to cart</button>
+                        </div>
+                    </div>
+                `)
+            }
+            sessionStorage.setItem("IDshop", "environs")
+            reloadd()
+        })
+        $(".murad").click(function () {
+            localStorage.setItem("NamePage", "murad")
+            sessionStorage.setItem("IDshop", "murad")
+            $(".products .col-12:last-child").html("");
+            for (var i = 0; i < murad.length; i++) {
+                $(`.col-12:last-child`).append(`<div class="col-3"></div>`)
+                $(`.col-12:last-child .col-3:nth-child(${i + 1})`).html(`
                 <div class="product-content">
                     <div>
                         <a href="./dataProducts.html" target="_blank" data-id="${i}" data-name="murad">
@@ -142,20 +152,22 @@
                     </div>
                     <div class="p-4">
                         <h3 class="NameProduct text-start">${murad[i].name}</h3>
-                        <h3 class="Money text-start">${murad[i].price}</h3>
-                        <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="murad">Add to cart</button>
+                        <p class="d-inline-block">Price: </p><h3 class="Money text-start d-inline-block" style="color: #0d6efd;"> ${murad[i].price}</h3>
+                        <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="murad" data-quality="0">Add to cart</button>
                     </div>
                 </div>
             `)
-                }
-                sessionStorage.setItem("IDshop", "murad")
-                break;
-
-            case "equipments":
-                $(".products .col-9").html("");
-                for (var i = 0; i < equipments.length; i++) {
-                    $(`.col-9`).append(`<div class="col-12 mb-3"></div>`)
-                    $(`.col-9 .col-12:nth-child(${i + 1})`).html(`
+            }
+            sessionStorage.setItem("IDshop", "murad")
+            reloadd()
+        })
+        $(".menu3").click(function () {
+            localStorage.setItem("NamePage", "equipments")
+            sessionStorage.setItem("IDshop", "equipments")
+            $(".products .col-12:last-child").html("");
+            for (var i = 0; i < equipments.length; i++) {
+                $(`.col-12:last-child`).append(`<div class="col-6 mb-3"></div>`)
+                $(`.col-12:last-child .col-6:nth-child(${i + 1})`).html(`
                     <div class="product-content d-flex">
                         <div>
                             <a href="./dataProducts.html" target="_blank" data-id="${i}" data-name="equipments">
@@ -163,129 +175,77 @@
                                     alt="">
                             </a>
                         </div>
-                        <div class="p-4 w-100">
+                        <div class="p-4 w-100 equipmentsname">
                             <h3 class="NameProduct text-start">${equipments[i].name}</h3>
-                            <h3 class="Money text-start">${equipments[i].price}</h3>
-                            <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="equipments">Add to cart</button>
+                            <p class="d-inline-block">Price: </p><h3 class="Money text-start d-inline-block" style="color: #0d6efd;"> ${equipments[i].price}</h3>
+                            <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="equipments" data-quality="0">Add to cart</button>
                         </div>
                     </div>
                 `)
-                }
-                sessionStorage.setItem("IDshop", "equipments")
-                break;
-
-            default:
-                localStorage.setItem("NamePage", "environs")
-                for (var i = 0; i < environs.length; i++) {
-                    $(`.col-9`).append(`<div class="col-4"></div>`)
-                    $(`.col-9 .col-4:nth-child(${i + 1})`).html(`
-                <div class="product-content">
-                        <div>
-                            <a href="./dataProducts.html" target="_blank" data-id="${i}" data-name="environs">
-                                <img src="${environs[i].img}"
-                                    alt="">
-                            </a>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="NameProduct text-start">${environs[i].name}</h3>
-                            <h3 class="Money text-start">${environs[i].price}</h3>
-                            <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="environs">Add to cart</button>
-                        </div>
-                    </div>
-                `)
-                }
-                sessionStorage.setItem("IDshop", "environs")
-                break;
-        }
-
-
-        $(".product-content a").click(function () {
-            localStorage.setItem("IdPage", $(this).attr('data-id'))
-        })
-
-
-        $(".environ").click(function () {
-            localStorage.setItem("NamePage", "environs")
-            sessionStorage.setItem("IDshop", "environs")
-            $(".products .col-3 ul li a").css("background", "white")
-            $(".products .col-3 ul li a").css("color", "black")
-            $(".environ").css("background", "#8abcf5")
-            $(".environ").css("color", "white")
-            location.reload();
-        })
-        $(".murad").click(function () {
-            localStorage.setItem("NamePage", "murad")
-            sessionStorage.setItem("IDshop", "murad")
-            $(".products .col-3 ul li a").css("background", "white")
-            $(".products .col-3 ul li a").css("color", "black")
-            $(".murad").css("background", "#8abcf5")
-            $(".murad").css("color", "white")
-            location.reload();
-        })
-        $(".menu3").click(function () {
-            localStorage.setItem("NamePage", "equipments")
+            }
             sessionStorage.setItem("IDshop", "equipments")
-            location.reload();
+            reloadd()
         })
 
 
-
-        // check guest cart
         var GuestCart = sessionStorage.getItem("GuestCart");
         if (!GuestCart) {
             sessionStorage.setItem("GuestCart", "");
         }
-        var CartItem = new Array();
-
-
-
+        function CartItem(name, id, quatity) {
+            this.name = name,
+                this.id = id,
+                this.quatity = quatity
+        }
         // shop to cart
-        $(".product-content button").click(function () {
-            var name = $(this).attr("data-name")
-            var id = $(this).attr("data-id")
-            CartItem.push({
-                Name: name,
-                Id: id,
+        var IdProduct = [];
+        function reloadd() {
+            $(".product-content button").click(function () {
+                var name = $(this).attr("data-name")
+                var id = $(this).attr("data-id")
+                var Cart = new CartItem(name, id, parseInt($(this).data("quality")) + 1);
+                $(this).data("quality", parseInt($(this).data("quality")) + 1)
+                // số lượng sp
+                if (!localStorage.getItem("QuatityProduct")) { localStorage.setItem("QuatityProduct", JSON.stringify(IdProduct)) }
+                localStorage.setItem("QuatityProduct", JSON.stringify(IdProduct.push(id)))
+                // chuỗi ID sp
+                localStorage.setItem("IDproducts", JSON.stringify(unique(IdProduct)))
+                localStorage.setItem(id, JSON.stringify(Cart))
             })
-            if (IDshop == "environs") {
-                localStorage.setItem("EnvironsCart", JSON.stringify(CartItem))
-            } else if (IDshop == "murad") {
-                localStorage.setItem("MuradCart", JSON.stringify(CartItem))
+        }
+
+
+
+        // lọc sản phẩm trùng
+        function unique(arr) {
+            var newArr = []
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) === -1) {
+                    newArr.push(arr[i])
+                }
             }
-            var environ = JSON.parse(localStorage.getItem("EnvironsCart"))
-            var murad = JSON.parse(localStorage.getItem("MuradCart"))
-            var EnvironMurad = environ.concat(murad)
-            console.log(EnvironMurad)
+            return newArr
+        }
+
+
+        // product info
+        // var IDshop = sessionStorage.getItem("IDshop")
+        // $(".product-content a").click(function () {
+        //     localStorage.setItem("IdPage", $(this).attr('data-id'))
+        // })
+
+        // check guest cart
+
+        $(".btn-products").click(function(){
+            $(".menu-products").toggle()
         })
 
+        $(".btn-products,.menu-products").mouseover(function(){
+            $(".menu-products").show()
+            $(this).mouseout(function(){
+                $(".menu-products").hide()
+            })
+        })
 
-        // $(".menu3").click(function(){
-        //     $(".products .col-9").html("");
-        //     for (var i = 0; i < equipments.length; i++) {
-        //         $(`.col-9`).append(`<div class="col-12 mb-3"></div>`)
-        //         $(`.col-9 .col-12:nth-child(${i + 1})`).html(`
-        //             <div class="product-content d-flex">
-        //                 <div>
-        //                     <a href="./dataProducts.html" target="_blank" data-id="${i}" data-name="equipments">
-        //                         <img src="${equipments[i].img}" height="100%"
-        //                             alt="">
-        //                     </a>
-        //                 </div>
-        //                 <div class="p-4 w-100">
-        //                     <h3 class="NameProduct text-start">${equipments[i].name}</h3>
-        //                     <h3 class="Money text-start">${equipments[i].price}</h3>
-        //                     <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="equipments">Add to cart</button>
-        //                 </div>
-        //             </div>
-        //         `)
-        //     }
-        //     sessionStorage.setItem("IDshop","equipments")
-        // })
     })
-
-
-
-
-
-
 </script>

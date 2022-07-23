@@ -47,6 +47,11 @@ body{
   width: 12%;
 }
 
+.DN i{
+  line-height:40px;
+  margin-right: 20px;
+}
+
 nav {
   position: fixed !important;
   z-index: 10;
@@ -86,6 +91,9 @@ ul .nav-item a:hover{
   transform: translateX(10px);
 }
 
+.menu-products .dropdown-item a{
+  color: black !important;
+}
 .dropdown:hover .dropdown-menu-first,
 .dropdown:hover .dropdown-menu-second,
 .dropdown:hover .dropdown-menu-third {
@@ -120,9 +128,6 @@ ul .nav-item a:hover{
   justify-content: start;
   position: relative;
 }
-.DN:hover .account-content {
-  display: block;
-}
 .DN img {
   border: 2px solid rgb(152, 149, 149);
   border-radius: 25px;
@@ -153,11 +158,28 @@ ul .nav-item a:hover{
   width: 200px;
   position: absolute;
   right: 0px !important;
-  top: 100% !important;
+  top: 89% !important;
+  position: relative;
+}
+.account-content::after{
+  content: "";
+  border: 10px solid;
+  border-color: transparent transparent rgb(232, 232, 232) transparent;
+  position: absolute;
+  top: -20px;
+  right: 8%;
 }
 .DN img:focus .account-content{
   right: 0px ;
   top: 100% ;
+}
+.DN a{
+  color: black;
+  opacity: 0.7;
+}
+.DN a:hover{
+  color: black;
+  opacity: 0.5;
 }
 /* BODY */
 
@@ -243,14 +265,34 @@ ul .nav-item a:hover{
   z-index: 1;
 }
 
+.product .item .btn-products{
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+.product .item .btn-products:hover{
+  /* border-color: #0d6efd; */
+  background-color: #0d6efd;
+  color:white
+}
+
 .owl-nav {
   display: none;
 }
 
-.item button {
+.product .item button {
   border-radius: 10px;
 }
-
+.product .item .text-center h3:first-child{
+  height: 32px;
+}
+.product .item .item-img{
+  height: 177px;
+}
+.product .item img{
+  height: 100%;
+  margin: auto;
+  width: auto !important;
+}
 /* Problems */
 .cardd {
   width: 20%;

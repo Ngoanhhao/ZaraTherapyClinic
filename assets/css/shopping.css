@@ -1,20 +1,20 @@
 /* product */
 .products{
     max-width: 1100px !important;
-    margin: 5% auto 0 auto !important;
+    margin: 77.2px auto 0 auto !important;
 }
 
-.products div:last-child .col-3 img{
+.products div:last-child .menu1 img{
     height: 100%;
-    width: auto;
-    margin: 10px;
+    max-width: 100%;
+    margin: 10px 0;
 }
-.products div:last-child .col-3{
+.products div:last-child .menu1{
     text-align: center;
     margin-bottom: 10px;
 }
 .product-content .NameProduct{
-    height: 42px;
+    height: 40px !important;
     font-weight: 500;
     font-size: 1.6rem;
 }
@@ -37,6 +37,23 @@
 .product-content button:hover{
     background-color: #8abcf5;
     border-color: #57a2f7;
+}
+/* info product */
+.product-content #infoproduct{
+    position: fixed;
+    visibility: hidden;
+    /* background-color: #fff; */
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 400px;
+    border-color: #8abcf5;
+    box-shadow: 0px 0px 3px #8abcf5;
+    border-radius: 7px;
+    padding: 15px;
+    color: black;
+
+}
+.product-content a:hover #infoproduct{
+    visibility: visible;
 }
 /* menu */
 .btn-products{    
@@ -130,24 +147,27 @@
     height: 100%;
 }
 
-.product-info div[class=btn-group] button,
-.product-info div[class=btn-group] input{
+.cart-item div[class=btn-group] button,
+.cart-item div[class=btn-group] input{
     width: 35px;
     border: 1px solid #8abcf5;
 
 }
-.product-info div[class=btn-group] input{
+.cart-item div[class=btn-group] input{
     border-right: none;
     border-left: none;
     outline: none;
 }
-.product-info div[class=btn-group] button:first-child{
+.cart-item div[class=btn-group]{
+   
+}
+.cart-item div[class=btn-group] button:first-child{
     border-right: none;
 }
-.product-info div[class=btn-group] button:last-child{
+.cart-item div[class=btn-group] button:last-child{
     border-left: none;
 }
-.product-info-content button:not(.product-info div[class=btn-group] button){
+.cart-item-content button:not(.cart-item div[class=btn-group] button){
     height: 40px;
     color: #4490e7;
     font-weight: 600;
@@ -161,12 +181,12 @@
     color: white;
 }
 .equipmentsname h3:first-child{
-    height: 60px;
+    height: 70px !important;
 }
 /* dataproduct */
 .DataProduct img{
     max-height: 100%;
-    min-height: 300px;
+    min-height: 350px;
     max-width: auto;
     margin: 10px;
 }

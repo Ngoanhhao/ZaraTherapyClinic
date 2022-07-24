@@ -47,6 +47,10 @@ body{
   width: 12%;
 }
 
+.DN{
+  margin-left: auto;
+}
+
 .DN i{
   line-height:40px;
   margin-right: 20px;
@@ -174,11 +178,11 @@ ul .nav-item a:hover{
   top: 100% ;
 }
 .DN a{
-  color: black;
+  color: #0ddefd;
   opacity: 0.7;
 }
 .DN a:hover{
-  color: black;
+  color: #0ddefd;
   opacity: 0.5;
 }
 /* BODY */

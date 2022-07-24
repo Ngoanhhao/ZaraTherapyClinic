@@ -28,6 +28,17 @@
     width: 100%;
     font-size: 18px;
   }
+  /* shop equipment*/
+  .equipmentsitem{
+    width: 75%;
+    margin: auto;
+  }
+  .equipmentsitem .product-content{
+    flex-direction: column !important;
+  }
+  .equipmentsitem .product-content a{
+    text-align: center;
+  }
 }
 /* <768*/
 @media only screen and (max-width: 767px) {
@@ -100,6 +111,11 @@
   .footer {
     text-align: center;
   }
+  /* shop products */
+  .equipmentsname h3:first-child{
+    height: 70px !important;
+  }
+   
 }
 /* <=576 */
 @media only screen and (max-width: 576px) {
@@ -153,4 +169,13 @@
   .copyright h3 {
     margin-top: 20px;
   }
+  /* products shop */
+  .menu1{
+    width: 100% !important;
+    margin: auto;
+  }
+  .background-signup .btn{
+    font-size: 1.4rem;
+  }
+ 
 }

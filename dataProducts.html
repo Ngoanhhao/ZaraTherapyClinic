@@ -74,17 +74,13 @@
                 </a>
             </div>
             <div class="product-info-content">
-                <h3 class="NameProduct text-start">${environs[id].name}</h3>
-                <h3 class="Money text-start">${environs[id].price}</h3>
-                <div class="d-flex justify-content-between">  
-                    <p class="s-14 pt-3">Quality:</p>
-                    <div class="btn-group" role="group" aria-label="Basic outlined example">
-                        <button type="button" class="btn btn-outline-primary s-16">-</button>
-                        <input type="number" class="text-center s-16" name="" id="" value="1">
-                        <button type="button" class="btn btn-outline-primary s-16">+</button>
-                    </div>
+                <h3 class="NameProduct text-center">${environs[id].name}</h3>
+                <h3 class="text-center">DESCRIPTION</h3>
+                <div class="s-14 p-3">
+                    <p class="text-justify">${environs[id].infoproduct}</p>
+                    <p class="text-justify mt-2 mb-2 fst-italic">${environs[id].warning1}</p>
+                    <p class="text-justify fst-italic">${environs[id].warning2}</p>
                 </div>
-                <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3">Add to cart</button>
             </div>
         `)
                 break;

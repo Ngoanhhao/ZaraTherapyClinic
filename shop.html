@@ -25,6 +25,8 @@
 </head>
 
 <body class="scroll">
+
+
     <!-- NAV -->
     <nav class="navbar navbar-expand-xl bg-white">
 
@@ -36,16 +38,17 @@
     <div class="products d-flex row flex-column">
         <!-- menu left -->
         <div class="col-12 row">
-            <div class="col-10 d-flex">
+            <div class="col-md-10 col-sm-8 col-8 d-flex">
                 <input class="form-control s-16" type="text" placeholder="Search" aria-label="Search">
                 <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-            <div class="col-2 dropdown">
+            <div class="col-md-2 col-sm-4 col-4  dropdown">
                 <button class="btn btn-products s-14" type="button">
-                    Dropdown button <i class="fa-solid fa-angle-down"></i>
-                  </button>
+                    Products <i class="fa-solid fa-angle-down"></i>
+                </button>
                 <ul class="dropdown-menu h-auto menu-products" aria-labelledby="dropdownMenuButton1">
-                    <li class="dropdown-item w-100 Skinessentials d-flex justify-content-between" id="nameinfo">Skin essentials
+                    <li class="dropdown-item w-100 Skinessentials d-flex justify-content-between" id="nameinfo">Skin
+                        essentials
                     </li>
                     <li class="dropdown-item"><a class="environ">Environ</a></li>
                     <li class="dropdown-item"><a class="murad">Murad</a></li>
@@ -71,33 +74,34 @@
 
 </html>
 <script src="./assets/nav.js"></script>
+<script src="./assets/toast.js"></script>
 <script src="./assets/signup.js"></script>
 <script src="./assets/footer.js"></script>
-<script src="./assets/countUp/countUp.js"></script>
 <script src="./assets/products.js"></script>
+<script src="./assets/countUp/countUp.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
 
     AOS.init({
         duration: 2000,
     });
-    // $().attr
     $(document).ready(function () {
         localStorage.setItem("NamePage", "environs")
         sessionStorage.setItem("IDshop", "environs")
         localStorage.setItem("NamePage", "environs")
         for (var i = 0; i < environs.length; i++) {
-            $(`.col-12:last-child`).append(`<div class="col-3"></div>`)
-            $(`.col-12:last-child .col-3:nth-child(${i + 1})`).html(`
+            $(`.col-12:last-child`).append(`<div class="menu1 col-lg-3 col-md-4 col-sm-6"></div>`)
+            $(`.col-12:last-child .col-lg-3:nth-child(${i + 1})`).html(`
                 <div class="product-content">
-                        <div>
-                            <a href="./dataProducts.html" target="_blank" data-id="${i}" data-name="environs">
+                        <div id="product">
+                            <a href="./dataProducts.html" target="_blank" titlee="product${i}" data-id="${i}" data-name="environs">
                                 <img src="${environs[i].img}"
                                     alt="">
+                                <span id="infoproduct" class="product${i} text-start"><h3>DESCRIPTION</h3> <hr> <p class="s-16"> <p class="s-16">${environs[i].infoproduct}</p><p class="s-16 mt-2 mb-2 fst-italic">${environs[i].warning1}</p><p class="s-16 fst-italic">${environs[i].warning2}</p></span>
                             </a>
                         </div>
                         <div class="p-4">
-                            <h3 class="NameProduct text-start">${environs[i].name}</h3>
+                            <h3 class="NameProduct text-center">${environs[i].name}</h3>
                             <p class="d-inline-block">Price: </p><h3 class="Money text-start d-inline-block" style="color: #0d6efd;"> ${environs[i].price}</h3>
                             <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="environs" data-quality="0">Add to cart</button>
                         </div>
@@ -105,10 +109,12 @@
                 `)
         }
         reloadd()
+        productinfo()
+        infoproduct()
 
 
         // menu
-        
+
 
 
         $(".environ").click(function () {
@@ -116,17 +122,18 @@
             sessionStorage.setItem("IDshop", "environs")
             $(".products .col-12:last-child").html("");
             for (var i = 0; i < environs.length; i++) {
-                $(`.col-12:last-child`).append(`<div class="col-3"></div>`)
-                $(`.col-12:last-child .col-3:nth-child(${i + 1})`).html(`
+                $(`.col-12:last-child`).append(`<div class="menu1 col-lg-3 col-md-4 col-sm-6"></div>`)
+                $(`.col-12:last-child .col-lg-3:nth-child(${i + 1})`).html(`
                 <div class="product-content">
                         <div>
-                            <a href="./dataProducts.html" target="_blank" data-id="${i}" data-name="environs">
+                            <a href="./dataProducts.html" target="_blank" titlee="product${i}" data-id="${i}" data-name="environs">
                                 <img src="${environs[i].img}"
                                     alt="">
+                                    <span id="infoproduct" class="product${i} text-start"><h3>DESCRIPTION</h3> <hr> <p class="s-16"> ${environs[i].infoproduct}</p><p class="s-16 mt-2 mb-2 fst-italic">${environs[i].warning1} </p><p class="s-16 fst-italic"> ${environs[i].warning2}</p></span>
                             </a>
                         </div>
                         <div class="p-4">
-                            <h3 class="NameProduct text-start">${environs[i].name}</h3>
+                            <h3 class="NameProduct text-center">${environs[i].name}</h3>
                             <p class="d-inline-block">Price: </p><h3 class="Money text-start d-inline-block" style="color: #0d6efd;"> ${environs[i].price}</h3>
                             <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="environs" data-quality="0">Add to cart</button>
                         </div>
@@ -135,23 +142,26 @@
             }
             sessionStorage.setItem("IDshop", "environs")
             reloadd()
+            productinfo()
+            infoproduct()
         })
         $(".murad").click(function () {
             localStorage.setItem("NamePage", "murad")
             sessionStorage.setItem("IDshop", "murad")
             $(".products .col-12:last-child").html("");
             for (var i = 0; i < murad.length; i++) {
-                $(`.col-12:last-child`).append(`<div class="col-3"></div>`)
-                $(`.col-12:last-child .col-3:nth-child(${i + 1})`).html(`
+                $(`.col-12:last-child`).append(`<div class="menu1 col-lg-3 col-md-4 col-sm-6"></div>`)
+                $(`.col-12:last-child .col-lg-3:nth-child(${i + 1})`).html(`
                 <div class="product-content">
                     <div>
-                        <a href="./dataProducts.html" target="_blank" data-id="${i}" data-name="murad">
+                        <a href="./dataProducts.html" target="_blank" titlee="product${i}" data-id="${i}" data-name="murad">
                             <img src="${murad[i].img}"
                                 alt="">
+                                <span id="infoproduct" class="product${i} text-start"><h3>DESCRIPTION</h3> <hr> <p class="s-16"> ${murad[i].infoproduct}</p><p class="s-16 mt-2 mb-2 fst-italic"> ${murad[i].warning1} </p><p class="s-16 fst-italic"> ${murad[i].warning2}</p></span>
                         </a>
                     </div>
                     <div class="p-4">
-                        <h3 class="NameProduct text-start">${murad[i].name}</h3>
+                        <h3 class="NameProduct text-center">${murad[i].name}</h3>
                         <p class="d-inline-block">Price: </p><h3 class="Money text-start d-inline-block" style="color: #0d6efd;"> ${murad[i].price}</h3>
                         <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="murad" data-quality="0">Add to cart</button>
                     </div>
@@ -160,31 +170,36 @@
             }
             sessionStorage.setItem("IDshop", "murad")
             reloadd()
+            productinfo()
+            infoproduct()
         })
         $(".menu3").click(function () {
             localStorage.setItem("NamePage", "equipments")
             sessionStorage.setItem("IDshop", "equipments")
             $(".products .col-12:last-child").html("");
             for (var i = 0; i < equipments.length; i++) {
-                $(`.col-12:last-child`).append(`<div class="col-6 mb-3"></div>`)
-                $(`.col-12:last-child .col-6:nth-child(${i + 1})`).html(`
-                    <div class="product-content d-flex">
+                $(`.col-12:last-child`).append(`<div class="col-sm-6 mb-3 equipmentsitem"></div>`)
+                $(`.col-12:last-child .col-sm-6:nth-child(${i + 1})`).html(`
+                    <div class="product-content d-flex flex-md-row">
                         <div>
-                            <a href="./dataProducts.html" target="_blank" data-id="${i}" data-name="equipments">
+                            <a class="text-center" href="./dataProducts.html" titlee="product${i}" target="_blank" data-id="${i}" data-name="equipments">
                                 <img src="${equipments[i].img}" height="100%"
                                     alt="">
+                                    <span id="infoproduct" class="product${i} text-start"><h3>DESCRIPTION</h3> <hr> <p class="s-16"> ${equipments[i].infoproduct} </p><p class="s-16 mt-2 mb-2 fst-italic">${equipments[i].warning1} </p><p class="s-16 fst-italic"> ${equipments[i].warning2}</p></span>
                             </a>
                         </div>
                         <div class="p-4 w-100 equipmentsname">
                             <h3 class="NameProduct text-start">${equipments[i].name}</h3>
                             <p class="d-inline-block">Price: </p><h3 class="Money text-start d-inline-block" style="color: #0d6efd;"> ${equipments[i].price}</h3>
-                            <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3" data-id="${i}" data-name="equipments" data-quality="0">Add to cart</button>
+                            <button type="button" class="btn btn-outline-secondary w-100 s-16" data-id="${i}" data-name="equipments" data-quality="0">Add to cart</button>
                         </div>
                     </div>
                 `)
             }
             sessionStorage.setItem("IDshop", "equipments")
             reloadd()
+            productinfo()
+            infoproduct()
         })
 
 
@@ -211,6 +226,11 @@
                 // chuỗi ID sp
                 localStorage.setItem("IDproducts", JSON.stringify(unique(IdProduct)))
                 localStorage.setItem(id, JSON.stringify(Cart))
+                toast({
+                    title: "success",
+                    message: "Product added to cart!!",
+                    type: "success",
+                });
             })
         }
 
@@ -229,23 +249,38 @@
 
 
         // product info
-        // var IDshop = sessionStorage.getItem("IDshop")
-        // $(".product-content a").click(function () {
-        //     localStorage.setItem("IdPage", $(this).attr('data-id'))
-        // })
+        var IDshop = sessionStorage.getItem("IDshop")
+        function productinfo() {
+            $(".product-content a").click(function () {
+                localStorage.setItem("NamePage", $(this).attr('data-name'))
+                localStorage.setItem("IdPage", $(this).attr('data-id'))
+            })
+        }
 
         // check guest cart
 
-        $(".btn-products").click(function(){
+        $(".btn-products").click(function () {
             $(".menu-products").toggle()
         })
 
-        $(".btn-products,.menu-products").mouseover(function(){
+        $(".btn-products,.menu-products").mouseover(function () {
             $(".menu-products").show()
-            $(this).mouseout(function(){
+            $(this).mouseout(function () {
                 $(".menu-products").hide()
             })
         })
+
+        // span
+        function infoproduct() {
+            $(".product-content a").mousemove(function (e) {
+                var x = e.clientX
+                var y = e.clientY
+                var classs = $(this).attr("titlee")
+                $("." + classs).css("left", `${10 + x}px`)
+                $("." + classs).css("top", `${10 + y}px`)
+            })
+        }
+
 
     })
 </script>

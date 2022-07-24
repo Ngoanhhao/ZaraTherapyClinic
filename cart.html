@@ -103,16 +103,25 @@
             id = Newproduct[i].id;
             switch (name) {
                 case "environs":
-                    $(".list-item").append(`<div class="cart-item d-flex justify-content-between"></div>`)
+                    $(".list-item").append(`<div class="cart-item d-flex justify-content-between pb-3"></div>`)
                     $(`.cart-item:nth-child(${i + 1})`).html(`
                 <div>
                     <h3>${environs[id].name}</h3>
-                    <p>Quantity: ${Newproduct[i].quatity}</p>
+                    <!--<p>Quantity: ${Newproduct[i].quatity}</p>-->
+                    <div class="quatity">  
+                        <p class="s-14">Quality:</p>
+                        <div class="btn-group" role="group" aria-label="Basic outlined example">
+                            <button type="button" class="btn btn-outline-primary s-16">-</button>
+                            <input type="number" class="text-center s-16" name="" id="" value="1">
+                            <button type="button" class="btn btn-outline-primary s-16">+</button>
+                        </div>
+                    </div>
                 </div>
-                <div>
+                <div class="d-flex flex-column justify-content-between">
                     <h3>${Prices[i] = parseInt(environs[id].price) * parseInt(Newproduct[i].quatity)}$</h3>
                     <p>remove</p>
                 </div>
+                
                 `)
                     break;
                 case "murad":
@@ -163,6 +172,17 @@
                 localStorage.removeItem("IDproducts")
                 localStorage.removeItem(Newproduct[i].id)
             }
+        })
+
+        // quatity
+        $(".quatity div[class=btn-group] button:first-child").click(function () {
+            $(".quatity div[class=btn-group] input").val(parseInt($(".quatity div[class=btn-group] input").val()) - 1)
+            if ($(".quatity div[class=btn-group] input").val() < 1) {
+                $(".quatity div[class=btn-group] input").val(1)
+            }
+        })
+        $(".quatity div[class=btn-group] button:last-child").click(function () {
+            $(".quatity div[class=btn-group] input").val(parseInt($(".quatity div[class=btn-group] input").val()) + 1)
         })
 
     })

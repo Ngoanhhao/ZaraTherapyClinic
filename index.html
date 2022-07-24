@@ -25,7 +25,7 @@
 <body class="scroll">
   <!-- NAV -->
   <nav class="navbar navbar-expand-xl bg-white">
-    
+
   </nav>
 
 
@@ -181,7 +181,8 @@
       </div>
       <div class="container pt-2 pb-2">
         <div class="row justify-content-around w-100 Problems">
-          <div class="col-xl-3 col-md-6 d-flex mt-3 mb-3 justify-content-center cardd" data-aos="flip-right" data-aos-once="true">
+          <div class="col-xl-3 col-md-6 d-flex mt-3 mb-3 justify-content-center cardd" data-aos="flip-right"
+            data-aos-once="true">
             <div class="card border-0" style="width: 100%;">
               <img src="assets/Img/problems/thoat-vi-dia-dem-1.jpg" class="card-img-top" alt="...">
               <div class="card-body p-0 pt-4">
@@ -192,7 +193,8 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-md-6 d-flex mt-3 mb-3 justify-content-center cardd" data-aos="flip-right" data-aos-once="true">
+          <div class="col-xl-3 col-md-6 d-flex mt-3 mb-3 justify-content-center cardd" data-aos="flip-right"
+            data-aos-once="true">
             <div class="card border-0" style="width: 100%;">
               <img src="assets/Img/problems/dau-that-lung.jpg" class="card-img-top" alt="...">
               <div class="card-body p-0 pt-4">
@@ -204,7 +206,8 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-md-6 d-flex mt-3 mb-3 justify-content-center cardd" data-aos="flip-right" data-aos-once="true">
+          <div class="col-xl-3 col-md-6 d-flex mt-3 mb-3 justify-content-center cardd" data-aos="flip-right"
+            data-aos-once="true">
             <div class="card border-0" style="width: 100%;">
               <img src="assets/Img/problems/thoai-hoa-cot-song.jpg" class="card-img-top" alt="...">
               <div class="card-body p-0 pt-4">
@@ -216,7 +219,8 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-md-6 d-flex mt-3 mb-3 justify-content-center cardd" data-aos="flip-right" data-aos-once="true">
+          <div class="col-xl-3 col-md-6 d-flex mt-3 mb-3 justify-content-center cardd" data-aos="flip-right"
+            data-aos-once="true">
             <div class="card border-0" style="width: 100%;">
               <img src="assets/Img/problems/thoai-hoa-dot-song-co-1.jpg" class="card-img-top" alt="...">
               <div class="card-body p-0 pt-4">
@@ -319,7 +323,7 @@
     <div data-aos="fade-right">
       <h1 class="text-center mt-5 mb-5 s-30">Testimonials</h1>
     </div>
-    
+
     <div class="owl-carousel owl-theme feedback mb-5" data-aos="zoom-in" data-aos-once="true">
       <div class="item">
         <div class="d-flex row">
@@ -349,7 +353,8 @@
               stretching and tearing of muscle fibers. He went through a consultation and underwent 5 treatments
               within 8 days. After the treatment course, Vincent was almost recovered and the pain was wiped away.”
             </p>
-            <p>“Vincent expressed his gratitude to ZaraTherapyClinic and the team of doctor and staff, who helped him get better
+            <p>“Vincent expressed his gratitude to ZaraTherapyClinic and the team of doctor and staff, who helped him
+              get better
               through chiropractic care and other non-invasive therapy.”</p>
             <div>
               <p class="text-end">Mr. Vincent Gothknecht</p>
@@ -404,34 +409,36 @@
               herniation. For 8 years, the pain severely affected his daily life, until he finally decided to seek
               treatment at ZaraTherapyClinic Clinic.”
             </p>
-            <p>“Hyumin’s pain subsided quickly in just 5 sessions. By the 12<sup>th</sup> session, he recovered completely and no longer experienced symptoms in his lower back.”</p>
+            <p>“Hyumin’s pain subsided quickly in just 5 sessions. By the 12<sup>th</sup> session, he recovered
+              completely and no longer experienced symptoms in his lower back.”</p>
             <div>
               <p class="text-end">Mr. Lee Hyunmin</p>
             </div>
           </div>
         </div>
       </div>
-  </div>
-  
+    </div>
 
-  <!-- footer -->
 
-  <div class="footer w-100">
+    <!-- footer -->
 
-  </div>
+    <div class="footer w-100">
 
-  <!-- login -->
-  <div class="background-signup justify-content-center align-items-center"></div>
-  <div id="toast"></div>
+    </div>
+
+    <!-- login -->
+    <div class="background-signup justify-content-center align-items-center"></div>
+    <div id="toast"></div>
 
 </body>
 
 </html>
 <script src="./assets/nav.js"></script>
+<script src="./assets/toast.js"></script>
 <script src="./assets/signup.js"></script>
 <script src="./assets/footer.js"></script>
-<script src="./assets/indexProduct.js"></script>
 <script src="./assets/products.js"></script>
+<script src="./assets/indexProduct.js"></script>
 <script src="./assets/countUp/countUp.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
@@ -483,6 +490,41 @@
       autoplayTimeout: 3000,
       autoplayHoverPause: true
     })
+    var IdProduct = [];
+    $(".btn-products").click(function () {
+      toast({
+        title: "success",
+        message: "Product added to cart!!",
+        type: "success",
+      });
+      
+      var name = $(this).attr("data-name")
+      var id = $(this).attr("data-id")
+      var Cart = new CartItem(name, id, parseInt($(this).data("quality")) + 1);
+      $(this).data("quality", parseInt($(this).data("quality")) + 1)
+      // số lượng sp
+      if (!localStorage.getItem("QuatityProduct")) { localStorage.setItem("QuatityProduct", JSON.stringify(IdProduct)) }
+      localStorage.setItem("QuatityProduct", JSON.stringify(IdProduct.push(id)))
+      // chuỗi ID sp
+      localStorage.setItem("IDproducts", JSON.stringify(unique(IdProduct)))
+      localStorage.setItem(id, JSON.stringify(Cart))
+
+      
+    })
+    function CartItem(name, id, quatity) {
+      this.name = name,
+        this.id = id,
+        this.quatity = quatity
+    }
+    function unique(arr) {
+      var newArr = []
+      for (var i = 0; i < arr.length; i++) {
+        if (newArr.indexOf(arr[i]) === -1) {
+          newArr.push(arr[i])
+        }
+      }
+      return newArr
+    }
   })
 
 </script>

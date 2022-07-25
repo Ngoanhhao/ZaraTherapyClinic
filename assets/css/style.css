@@ -178,8 +178,22 @@ ul .nav-item a:hover{
   top: 100% ;
 }
 .DN a{
-  color: #0ddefd;
+  color: #42cd67;
   opacity: 0.7;
+  position: relative;
+}
+.DN p{
+  position: absolute;
+  right: 5px;
+  top: 20px;
+  color: white;
+  background-color: red;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-size: 9px;
+  line-height: 2px;
+  text-indent: 4px;
+  padding-bottom: 5px;
 }
 .DN a:hover{
   color: #0ddefd;

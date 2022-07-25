@@ -78,11 +78,47 @@
                 <h3 class="text-center">DESCRIPTION</h3>
                 <div class="s-14 p-3">
                     <p class="text-justify">${environs[id].infoproduct}</p>
+                    <div class="Benefits-container">
+                        <h3></h3>
+                        <ul class="Benefits"></ul>
+                    </div>
+                    <div class="use-container">
+                        <h3></h3>
+                        <ul class="use" style="list-style: none;"></ul>
+                    </div>
+                    <div class="Ingredients-container">
+                        <h3></h3>
+                    </div>
                     <p class="text-justify mt-2 mb-2 fst-italic">${environs[id].warning1}</p>
                     <p class="text-justify fst-italic">${environs[id].warning2}</p>
                 </div>
             </div>
         `)
+                if (environs[id].Benefits.length >= 1) {
+                    $(".Benefits-container h3").text("Benefits: ")
+                }
+                if (environs[id].HowToUse.length >= 1) {
+                    $(".use-container h3").text("How to use: ")
+                }
+                if (environs[id].Ingredients.length >= 1) {
+                    $(".Ingredients-container h3").text("Ingredients: ")
+                }
+                for (let i = 0; i < environs[id].Benefits.length; i++) {
+                    $(".Benefits").append(`
+                    <li>${environs[id].Benefits[i]}</li>
+                `)
+                }
+                for (let i = 0; i < environs[id].HowToUse.length; i++) {
+                    $(".use").append(`
+                    <li class="mt-2">${environs[id].HowToUse[i]}</li>
+                `)
+                }
+                for (let i = 0; i < environs[id].Ingredients.length; i++) {
+                    $(".Ingredients-container").append(`
+                    <p>${environs[id].Ingredients[i]}</p>
+                `)
+                }
+
                 break;
             case "murad":
                 $(".DataProduct").html(`
@@ -93,19 +129,50 @@
                     </a>
                 </div>
                 <div class="product-info-content">
-                    <h3 class="NameProduct text-start">${murad[id].name}</h3>
-                    <h3 class="Money text-start">${murad[id].price}</h3>
-                    <div class="d-flex justify-content-between">  
-                        <p class="s-14 pt-3">Quality:</p>
-                        <div class="btn-group" role="group" aria-label="Basic outlined example">
-                            <button type="button" class="btn btn-outline-primary s-16">-</button>
-                            <input type="number" class="text-center s-16" name="" id="" value="1">
-                            <button type="button" class="btn btn-outline-primary s-16">+</button>
-                        </div>
+                    <h3 class="NameProduct text-center">${murad[id].name}</h3>
+                    <h3 class="text-center">DESCRIPTION</h3>
+                <div class="s-14 p-3">
+                    <p class="text-justify">${murad[id].infoproduct}</p>
+                    <div class="Benefits-container">
+                        <h3></h3>
+                        <ul class="Benefits"></ul>
                     </div>
-                    <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3">Add to cart</button>
-                </div>
+                    <div class="use-container">
+                        <h3></h3>
+                        <ul class="use" style="list-style: none;"></ul>
+                    </div>
+                    <div class="Ingredients-container">
+                        <h3></h3>
+                    </div>
+                        <p class="text-justify mt-2 mb-2 fst-italic">${murad[id].warning1}</p>
+                        <p class="text-justify fst-italic">${murad[id].warning2}</p>
+                    </div>
+                </div>      
             `)
+                if (murad[id].Benefits.length >= 1) {
+                    $(".Benefits-container h3").text("Benefits: ")
+                }
+                if (murad[id].HowToUse.length >= 1) {
+                    $(".use-container h3").text("How to use: ")
+                }
+                if (murad[id].Ingredients.length >= 1) {
+                    $(".Ingredients-container h3").text("Ingredients: ")
+                }
+                for (let i = 0; i < murad[id].Benefits.length; i++) {
+                    $(".Benefits").append(`
+                    <li>${murad[id].Benefits[i]}</li>
+                `)
+                }
+                for (let i = 0; i < murad[id].HowToUse.length; i++) {
+                    $(".use").append(`
+                    <li class="mt-2">${murad[id].HowToUse[i]}</li>
+                `)
+                }
+                for (let i = 0; i < murad[id].Ingredients.length; i++) {
+                    $(".Ingredients-container").append(`
+                    <p>${murad[id].Ingredients[i]}</p>
+                `)
+                }
                 break;
             case "equipments":
                 $(".DataProduct").html(`
@@ -116,19 +183,50 @@
                     </a>
                 </div>
                 <div class="product-info-content">
-                    <h3 class="NameProduct text-start">${equipments[id].name}</h3>
-                    <h3 class="Money text-start">${equipments[id].price}</h3>
-                    <div class="d-flex justify-content-between">  
-                        <p class="s-14 pt-3">Quality:</p>
-                        <div class="btn-group" role="group" aria-label="Basic outlined example">
-                            <button type="button" class="btn btn-outline-primary s-16">-</button>
-                            <input type="number" class="text-center s-16" name="" id="" value="1">
-                            <button type="button" class="btn btn-outline-primary s-16">+</button>
-                        </div>
+                    <h3 class="NameProduct text-center">${equipments[id].name}</h3>
+                    <h3 class="text-center">DESCRIPTION</h3>
+                <div class="s-14 p-3">
+                    <p class="text-justify">${equipments[id].infoproduct}</p>
+                    <div class="Benefits-container">
+                        <h3></h3>
+                        <ul class="Benefits"></ul>
                     </div>
-                    <button type="button" class="btn btn-outline-secondary w-100 s-16 mt-3">Add to cart</button>
-                </div>
+                    <div class="use-container">
+                        <h3></h3>
+                        <ul class="use" style="list-style: none;"></ul>
+                    </div>
+                    <div class="Ingredients-container">
+                        <h3></h3>
+                    </div>
+                        <p class="text-justify mt-2 mb-2 fst-italic">${equipments[id].warning1}</p>
+                        <p class="text-justify fst-italic">${equipments[id].warning2}</p>
+                    </div>
+                </div>      
             `)
+                if (equipments[id].Benefits.length >= 1) {
+                    $(".Benefits-container h3").text("Benefits: ")
+                }
+                if (equipments[id].HowToUse.length >= 1) {
+                    $(".use-container h3").text("How to use: ")
+                }
+                if (equipments[id].Ingredients.length >= 1) {
+                    $(".Ingredients-container h3").text("Ingredients: ")
+                }
+                for (let i = 0; i < equipments[id].Benefits.length; i++) {
+                    $(".Benefits").append(`
+                    <li>${equipments[id].Benefits[i]}</li>
+                `)
+                }
+                for (let i = 0; i < equipments[id].HowToUse.length; i++) {
+                    $(".use").append(`
+                    <li class="mt-2">${equipments[id].HowToUse[i]}</li>
+                `)
+                }
+                for (let i = 0; i < equipments[id].Ingredients.length; i++) {
+                    $(".Ingredients-container").append(`
+                    <p>${equipments[id].Ingredients[i]}</p>
+                `)
+                }
                 break;
 
             default:
@@ -146,13 +244,13 @@
             $(".product-info div[class=btn-group] input").val(parseInt($(".product-info div[class=btn-group] input").val()) + 1)
         })
 
+
+
+
+
         AOS.init({
             duration: 2000,
         });
 
     })
-
-
-
-
 </script>

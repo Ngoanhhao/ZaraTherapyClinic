@@ -88,7 +88,6 @@
     $(document).ready(function () {
         localStorage.setItem("NamePage", "environs")
         sessionStorage.setItem("IDshop", "environs")
-        localStorage.setItem("NamePage", "environs")
         for (var i = 0; i < environs.length; i++) {
             $(`.col-12:last-child`).append(`<div class="menu1 col-lg-3 col-md-4 col-sm-6"></div>`)
             $(`.col-12:last-child .col-lg-3:nth-child(${i + 1})`).html(`
@@ -213,7 +212,11 @@
                 this.quatity = quatity
         }
         // shop to cart
-        var IdProduct = [];
+        if(!localStorage.getItem("IDproducts")){
+            var IdProduct = [];
+            IdProduct = JSON.parse(localStorage.setItem("IDproducts",JSON.stringify(IdProduct)));
+        }
+        var IdProduct = JSON.parse(localStorage.getItem("IDproducts"));
         function reloadd() {
             $(".product-content button").click(function () {
                 var name = $(this).attr("data-name")
@@ -222,15 +225,30 @@
                 $(this).data("quality", parseInt($(this).data("quality")) + 1)
                 // số lượng sp
                 if (!localStorage.getItem("QuatityProduct")) { localStorage.setItem("QuatityProduct", JSON.stringify(IdProduct)) }
-                localStorage.setItem("QuatityProduct", JSON.stringify(IdProduct.push(id)))
+                localStorage.setItem("QuatityProduct", JSON.stringify(IdProduct.push(id + name)))
                 // chuỗi ID sp
                 localStorage.setItem("IDproducts", JSON.stringify(unique(IdProduct)))
-                localStorage.setItem(id, JSON.stringify(Cart))
+                // tạo key
+                if(name == "environs"){
+                    localStorage.setItem(id + "environs", JSON.stringify(Cart))
+                }
+                if(name == "murad"){
+                    localStorage.setItem(id + "murad", JSON.stringify(Cart))
+                }
+                if(name == "equipments"){
+                    localStorage.setItem(id + "equipments", JSON.stringify(Cart))
+                }
                 toast({
                     title: "success",
                     message: "Product added to cart!!",
                     type: "success",
                 });
+                if (JSON.parse(localStorage.getItem("IDproducts"))=="") {
+                    $(".DN p").hide()
+                } else {
+                    $(".DN p").show()
+                    $(".DN p").html(JSON.parse(localStorage.getItem("IDproducts")).length)
+                }
             })
         }
 
@@ -270,7 +288,7 @@
             })
         })
 
-        // span
+        // tooltip mousemouve
         function infoproduct() {
             $(".product-content a").mousemove(function (e) {
                 var x = e.clientX

@@ -190,4 +190,30 @@
   .cart-item tr td:nth-child(4){
     display: none;
   }
+  .cart-item table tr td .btn-group{
+    top: 80% !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .cart-item table tr td .btn-group input,
+  .cart-item table tr td .btn-group button{
+    width: 44px !important;
+    line-height: 20px;
+  }
+  .cart-item table tr td .btn-group button:first-child{
+    border: 1px solid #8abcf5;
+    border-right: none;
+  }
+  .cart-item table tr td .btn-group button:last-child{
+    border: 1px solid #8abcf5;
+    border-left: none;
+  }
+  .cart-item table tr td .btn-group input{
+    border: 1px solid #8abcf5;
+    border-left: none;
+    border-right: none;
+  }
+  .cart-item table tr td .btn-group input:focus{
+    outline: none;
+  }
 }

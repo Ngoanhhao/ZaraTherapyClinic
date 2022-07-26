@@ -20,7 +20,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/carousel/owl.carousel.min.css">
     <script src="assets/carousel/owl.carousel.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body class="scroll">
@@ -113,10 +112,6 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
 
-    AOS.init({
-        duration: 2000,
-    });
-
     $(document).ready(function () {
         var IDproducts = JSON.parse(localStorage.getItem("IDproducts"));
         var Prices = [];
@@ -127,18 +122,24 @@
         for (let i = 0; i < IDproducts.length; i++) {
             $("table tbody").append('<tr class="product-item"></tr>')
             $(`tr:nth-child(${i + 2})`).html(`
-                    <td class="d-flex align-items-center row">
+                    <td class="d-flex align-items-sm-center row">
 
                         <div class="img-product col-sm-3 col-3">
                             <img src=""alt="">
                         </div>
-
-                        <div class="content-product text-primary name col-sm-9 col-6">
+                        <div class=" col-sm-9 col-9 row flex-column justify-content-between">
+                            <div class="content-product text-primary name col-12"></div>
+                            <div class="col-12">
+                                <div class="btn-group d-sm-none" role="group" aria-label="Basic outlined example">
+                                    <button type="button" data-id="" class="btn btn-outline-primary s-16">-</button>
+                                    <input type="number" class="text-center s-16" value="" readonly>
+                                    <button type="button" data-id="" class="btn btn-outline-primary s-16">+</button>
+                                </div>
+                                <div>
+                                    <p class="s-16 total-mb d-sm-none" data-price="" id="" data-quantity-item=""></p>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="col-3">
-                        </div>
-
                     </td>
                     <td>
                         <p class="s-16 price"></p>
@@ -170,8 +171,9 @@
                     $(`tr:nth-child(${i + 2}) .price`).text(`${environs[id].price}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr("data-price", `${environs[id].price}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr("id", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:first-child .total-mb`).addClass(`${IDproducts[i]}`)
                     $(`tr:nth-child(${i + 2}) td:last-child i`).attr("data-remove", `${IDproducts[i]}`)
-                    $(`tr:nth-child(${i + 2}) td:last-child p`).text(`${Prices[i] = parseInt(environs[id].price) * parseInt(Newproduct[i].quatity)}$`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p, tr:nth-child(${i + 2}) td:first-child .total-mb`).text(`${Prices[i] = parseInt(environs[id].price) * parseInt(Newproduct[i].quatity)}$`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr(`data-quantity-item`, i)
                     break;
                 case "murad":
@@ -180,6 +182,7 @@
                     $(`tr:nth-child(${i + 2}) .price`).text(`${murad[id].price}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr("data-price", `${murad[id].price}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr("id", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child i`).attr("data-remove", `${IDproducts[i]}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).text(`${Prices[i] = parseInt(murad[id].price) * parseInt(Newproduct[i].quatity)}$`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr(`data-quantity-item`, i)
 
@@ -190,6 +193,7 @@
                     $(`tr:nth-child(${i + 2}) .price`).text(`${equipments[id].price}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr("data-price", `${equipments[id].price}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr("id", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child i`).attr("data-remove", `${IDproducts[i]}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).text(`${Prices[i] = parseInt(equipments[id].price) * parseInt(Newproduct[i].quatity)}$`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr(`data-quantity-item`, i)
                     break;
@@ -229,7 +233,9 @@
             $("." + id).val(newp.quatity);
             // add total money vào content sau khi giảm
             $("#" + id).text(newp.quatity * parseInt($("#" + id).data("price")) + "$");
-
+            // add total money cho giao diện mb
+            $("." + id).text(newp.quatity * parseInt($("#" + id).data("price")) + "$");
+            
             // repair total bill
             repairTotalbill()
         })
@@ -243,6 +249,8 @@
             $("." + id).val(newp.quatity);
             // add total money vào content sau khi giảm
             $("#" + id).text(newp.quatity * parseInt($("#" + id).data("price")) + "$");
+            // add total money cho giao diện mb
+            $("." + id).text(newp.quatity * parseInt($("#" + id).data("price")) + "$");
 
             // repair total bill
             repairTotalbill()

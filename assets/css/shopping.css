@@ -269,11 +269,7 @@
     cursor: pointer;
     opacity: 0.6;
 }
-.total-mb{
-    width: auto !important;
-    top: 80% !important;
-    left: 80% !important;
-}
+
 /* nummber input edit */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

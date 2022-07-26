@@ -138,6 +138,9 @@
                                 <div>
                                     <p class="s-16 total-mb d-sm-none" data-price="" id="" data-quantity-item=""></p>
                                 </div>
+                                <div class="text-end p-20 pe-md-4 pe-sm-1 d-sm-none close-mb">
+                                    <p class=" s-14 w-auto" id="close" data-remove="">Remove</p>
+                                </div>
                             </div>
                         </div>
                     </td>
@@ -173,6 +176,7 @@
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr("id", `${IDproducts[i]}`)
                     $(`tr:nth-child(${i + 2}) td:first-child .total-mb`).addClass(`${IDproducts[i]}`)
                     $(`tr:nth-child(${i + 2}) td:last-child i`).attr("data-remove", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:first-child p`).attr("data-remove", `${IDproducts[i]}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p, tr:nth-child(${i + 2}) td:first-child .total-mb`).text(`${Prices[i] = parseInt(environs[id].price) * parseInt(Newproduct[i].quatity)}$`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr(`data-quantity-item`, i)
                     break;
@@ -182,8 +186,10 @@
                     $(`tr:nth-child(${i + 2}) .price`).text(`${murad[id].price}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr("data-price", `${murad[id].price}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr("id", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:first-child .total-mb`).addClass(`${IDproducts[i]}`)
                     $(`tr:nth-child(${i + 2}) td:last-child i`).attr("data-remove", `${IDproducts[i]}`)
-                    $(`tr:nth-child(${i + 2}) td:last-child p`).text(`${Prices[i] = parseInt(murad[id].price) * parseInt(Newproduct[i].quatity)}$`)
+                    $(`tr:nth-child(${i + 2}) td:first-child p`).attr("data-remove", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p, tr:nth-child(${i + 2}) td:first-child .total-mb`).text(`${Prices[i] = parseInt(murad[id].price) * parseInt(Newproduct[i].quatity)}$`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr(`data-quantity-item`, i)
 
                     break;
@@ -193,8 +199,10 @@
                     $(`tr:nth-child(${i + 2}) .price`).text(`${equipments[id].price}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr("data-price", `${equipments[id].price}`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr("id", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:first-child .total-mb`).addClass(`${IDproducts[i]}`)
                     $(`tr:nth-child(${i + 2}) td:last-child i`).attr("data-remove", `${IDproducts[i]}`)
-                    $(`tr:nth-child(${i + 2}) td:last-child p`).text(`${Prices[i] = parseInt(equipments[id].price) * parseInt(Newproduct[i].quatity)}$`)
+                    $(`tr:nth-child(${i + 2}) td:first-child p`).attr("data-remove", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p, tr:nth-child(${i + 2}) td:first-child .total-mb`).text(`${Prices[i] = parseInt(equipments[id].price) * parseInt(Newproduct[i].quatity)}$`)
                     $(`tr:nth-child(${i + 2}) td:last-child p`).attr(`data-quantity-item`, i)
                     break;
             }
@@ -265,7 +273,7 @@
         }
 
         // remove
-        $("tr td:last-child i").click(function () {
+        $("tr td:last-child i, tr td:first-child p[id='close']").click(function () {
             let dataremove = $(this).attr("data-remove")
             let newIDproducts = IDproducts.filter(item => item != dataremove)
             localStorage.setItem("IDproducts", JSON.stringify(newIDproducts))

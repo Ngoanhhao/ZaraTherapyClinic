@@ -29,14 +29,14 @@
     font-size: 18px;
   }
   /* shop equipment*/
-  .equipmentsitem{
+  .equipmentsitem {
     width: 75%;
     margin: auto;
   }
-  .equipmentsitem .product-content{
+  .equipmentsitem .product-content {
     flex-direction: column !important;
   }
-  .equipmentsitem .product-content a{
+  .equipmentsitem .product-content a {
     text-align: center;
   }
 }
@@ -112,14 +112,13 @@
     text-align: center;
   }
   /* shop products */
-  .equipmentsname h3:first-child{
+  .equipmentsname h3:first-child {
     height: 70px !important;
   }
   /* cart */
-  .name{
+  .name {
     width: 200px;
   }
-   
 }
 /* <=576 */
 @media only screen and (max-width: 576px) {
@@ -162,7 +161,7 @@
     display: none;
   }
   /* feedback */
-  .feedback img{
+  .feedback img {
     width: 100% !important;
   }
   /* copyright */
@@ -174,11 +173,11 @@
     margin-top: 20px;
   }
   /* products shop */
-  .menu1{
+  .menu1 {
     width: 100% !important;
     margin: auto;
   }
-  .background-signup .btn{
+  .background-signup .btn {
     font-size: 1.4rem;
   }
   /* cart */
@@ -187,33 +186,48 @@
   .cart-item tr th:nth-child(4),
   .cart-item tr td:nth-child(2),
   .cart-item tr td:nth-child(3),
-  .cart-item tr td:nth-child(4){
+  .cart-item tr td:nth-child(4) {
     display: none;
   }
-  .cart-item table tr td .btn-group{
+  .cart-item table tr td .btn-group {
     top: 80% !important;
+    right: 120px !important;
     width: 30px !important;
     height: 30px !important;
   }
   .cart-item table tr td .btn-group input,
-  .cart-item table tr td .btn-group button{
+  .cart-item table tr td .btn-group button {
     width: 44px !important;
     line-height: 20px;
   }
-  .cart-item table tr td .btn-group button:first-child{
+  .cart-item table tr td .btn-group button:first-child {
     border: 1px solid #8abcf5;
     border-right: none;
   }
-  .cart-item table tr td .btn-group button:last-child{
+  .cart-item table tr td .btn-group button:last-child {
     border: 1px solid #8abcf5;
     border-left: none;
   }
-  .cart-item table tr td .btn-group input{
+  .cart-item table tr td .btn-group input {
     border: 1px solid #8abcf5;
     border-left: none;
     border-right: none;
   }
-  .cart-item table tr td .btn-group input:focus{
+  .cart-item table tr td .btn-group input:focus {
     outline: none;
   }
+  .total-mb {
+    width: auto !important;
+    top: 80% !important;
+    right: 2% !important;
+  }
+  .close-mb {
+    position: absolute;
+    bottom: 17px;
+    left: 101px;
+  }
+  .name {
+    font-size: 13px;
+  }
+
 }

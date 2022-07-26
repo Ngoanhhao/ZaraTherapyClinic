@@ -115,6 +115,10 @@
   .equipmentsname h3:first-child{
     height: 70px !important;
   }
+  /* cart */
+  .name{
+    width: 200px;
+  }
    
 }
 /* <=576 */
@@ -177,5 +181,13 @@
   .background-signup .btn{
     font-size: 1.4rem;
   }
- 
+  /* cart */
+  .cart-item tr th:nth-child(2),
+  .cart-item tr th:nth-child(3),
+  .cart-item tr th:nth-child(4),
+  .cart-item tr td:nth-child(2),
+  .cart-item tr td:nth-child(3),
+  .cart-item tr td:nth-child(4){
+    display: none;
+  }
 }

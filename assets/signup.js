@@ -279,7 +279,7 @@ function signin() {
 
 function signinSuccess() {
   $(".DN").html(`
-  <a href="./cart.html" target="_blank"><i class="fa-solid fa-cart-shopping s-18"></i></a>
+  <a href="./cart.html"><i class="fa-solid fa-cart-shopping s-18"></i></a>
   <img id="avatar" width="15%" src="assets/Img/avatar.png"> 
   <ul class="dropdown-menu account-content">
     <li class="text-center"><a class="dropdown-item" id="nameinfo" href="#">${localStorage.getItem(

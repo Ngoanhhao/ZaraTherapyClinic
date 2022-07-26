@@ -1,3 +1,4 @@
+
 /* product */
 .products{
     max-width: 1100px !important;
@@ -147,6 +148,10 @@
     height: 100%;
 }
 
+.cart{
+    min-height: 700px;
+}
+
 .cart-item div[class=btn-group] button,
 .cart-item div[class=btn-group] input{
     width: 35px;
@@ -158,14 +163,14 @@
     border-left: none;
     outline: none;
 }
-.cart-item div[class=btn-group]{
-   
-}
 .cart-item div[class=btn-group] button:first-child{
     border-right: none;
 }
 .cart-item div[class=btn-group] button:last-child{
     border-left: none;
+}
+.cart-item table{
+    display: none;
 }
 .cart-item-content button:not(.cart-item div[class=btn-group] button){
     height: 40px;
@@ -198,8 +203,8 @@
 
 /* cart */
 .cart{
-    margin-top: 72.2px !important;
-    max-width: 500px !important;
+    margin-top: 82.2px !important;
+    max-width: 900px !important;
 }
 .cart .cart-container{
     border: 1px solid black;
@@ -233,6 +238,40 @@
     display: none;
 }
 
+.cart-item table tr th:first-child{
+    width: 450px;
+}
+.cart-item table tr td img{
+    height: 80px;
+}
+.cart-item table tr td .img-product{
+    /* width: 100px; */
+    height: 100px;
+    text-align: center;
+}
+.cart-item table tr td{
+    position: relative;
+}
+.cart-item table tr td p,
+.cart-item table tr td .btn-group,
+#close{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+.cart-item #close{
+    color: black;
+    opacity: 0.4;
+}
+.cart-item #close:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+tr:hover{
+    /* background-color: transparent; */
+}
 /* nummber input edit */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

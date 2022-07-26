@@ -91,7 +91,7 @@ $(document).ready(function(){
       </ul>
       <!-- sign -->
       <div class="d-flex DN justify-content-end p-3" role="search" method="">
-        <a href="./cart.html" target="_blank"><i class="fa-solid fa-cart-shopping s-18"></i>
+        <a href="./cart.html"><i class="fa-solid fa-cart-shopping s-18"></i>
           <p>0</p>
         </a>
         <button class="border-0 container-search_btn border-bottom s-14 m-2 signin" type="button">Sign in</button>

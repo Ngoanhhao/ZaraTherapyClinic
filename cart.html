@@ -41,23 +41,52 @@
             </div>
 
             <div class="list-item">
-                <!-- <div class="cart-item">
-                            <div>
-                                <h3>Environ Starter Kit</h3>
-                                <p>Quantity: 1</p>
-                            </div>
-                            <div>
-                                <h3>109$</h3>
-                                <p>remove</p>
-                            </div>
-                        </div> -->
+                <div class="cart-item">
+                    <table class="table s-16">
+                        <tr class="text-center">
+                            <th>Products</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                        </tr>
+                        <!-- <tr class="product-item">
+                            <td class="d-flex align-items-center">
+                                <div class="img-product">
+                                    <img src="./assets/Img/products/environ/08092016-174826-skin_essentia_avst_moisturiser_1.png"
+                                        alt="">
+                                </div>
+                                <div class="content-product text-primary">
+                                    Environ Vita-Antioxidant AVST1 Moisturiser
+                                </div>
+                            </td>
+                            <td>
+                                <p class="s-16">50$</p>
+                            </td>
+                            <td class="p-0" style="width: 100px;">
+                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                    <button type="button" data-id="${IDproducts[i]}"
+                                        class="btn btn-outline-primary s-16">-</button>
+                                    <input type="number" class="text-center s-16 ${IDproducts[i]}" value="5">
+                                    <button type="button" data-id="${IDproducts[i]}"
+                                        class="btn btn-outline-primary s-16">+</button>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="s-16">250$</p>
+                                <div class="text-end p-20 pe-5">
+                                    <i class="fa-solid fa-circle-xmark s-18 w-auto" id="close"></i>
+                                </div>
+                            </td>
+                        </tr> -->
+
+                    </table>
+                </div>
             </div>
             <div class="cart-bot-container">
                 <h2 class="text-center empty">Your bag is empty</h2>
-                <hr>
                 <div class="cart-bot pt-2 justify-content-between">
-                    <h2>Total</h2>
-                    <h2>0$</h2>
+                    <h2 style="margin-left: 10%;">Total</h2>
+                    <h2 style="margin-right: 16%;">0$</h2>
                 </div>
             </div>
         </div>
@@ -68,7 +97,7 @@
 
     <!-- footer -->
 
-    <!-- <div class="footer w-100"></div> -->
+    <div class="footer w-100"></div>
 
     <!-- login -->
     <div class="background-signup justify-content-center align-items-center"></div>
@@ -95,88 +124,91 @@
         var Newproduct = [];
         var id;
         var total = 0;
-        // 
+        // create khung
+        for (let i = 0; i < IDproducts.length; i++) {
+            $("table tbody").append('<tr class="product-item"></tr>')
+            $(`tr:nth-child(${i + 2})`).html(`
+                    <td class="d-flex align-items-center row">
+
+                        <div class="img-product col-sm-3 col-3">
+                            <img src=""alt="">
+                        </div>
+
+                        <div class="content-product text-primary name col-sm-9 col-6">
+                        </div>
+                        
+                        <div class="col-3">
+                        </div>
+
+                    </td>
+                    <td>
+                        <p class="s-16 price"></p>
+                    </td>
+                    <td class="p-0" style="width: 100px;">
+                        <div class="btn-group" role="group" aria-label="Basic outlined example">
+                            <button type="button" data-id="" class="btn btn-outline-primary s-16">-</button>
+                            <input type="number" class="text-center s-16" value="" readonly>
+                            <button type="button" data-id="" class="btn btn-outline-primary s-16">+</button>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="s-16" data-price="" id="" data-quantity-item=""></p>
+                        <div class="text-end p-20 pe-md-4 pe-sm-1">
+                            <i class="fa-solid fa-circle-xmark s-18 w-auto" id="close" data-remove=""></i>
+                        </div>
+                    </td>
+            `)
+        }
+        // add data
         for (let i = 0; i < IDproducts.length; i++) {
             Newproduct[i] = JSON.parse(localStorage.getItem(IDproducts[i]))
             var name = Newproduct[i].name;
             id = Newproduct[i].id;
             switch (name) {
                 case "environs":
-                    $(".list-item").append(`<div class="cart-item d-flex justify-content-between pb-3" id="${IDproducts[i]}"></div>`)
-                    $(`.cart-item:nth-child(${i + 1})`).html(`
-                <div>
-                    <h3>${environs[id].name}</h3>
-                    <!--<p>Quantity: ${Newproduct[i].quatity}</p>-->
-                    <div class="quatity">  
-                        <p class="s-14">Quality:</p>
-                        <div class="btn-group" role="group" aria-label="Basic outlined example">
-                            <button type="button" data-id="${IDproducts[i]}" class="btn btn-outline-primary s-16">-</button>
-                            <input type="number" class="text-center s-16 ${IDproducts[i]}" value="${Newproduct[i].quatity}">
-                            <button type="button" data-id="${IDproducts[i]}" class="btn btn-outline-primary s-16">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex flex-column justify-content-between">
-                    <h3 data-price="${environs[id].price}" id="${i}price">${Prices[i] = parseInt(environs[id].price) * parseInt(Newproduct[i].quatity)}$</h3>
-                    <p>remove</p>
-                </div>
-                
-                `)
+                    $(`tr:nth-child(${i + 2}) .img-product img`).attr("src", `${environs[id].img}`)
+                    $(`tr:nth-child(${i + 2}) .name`).text(`${environs[id].name}`)
+                    $(`tr:nth-child(${i + 2}) .price`).text(`${environs[id].price}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).attr("data-price", `${environs[id].price}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).attr("id", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child i`).attr("data-remove", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).text(`${Prices[i] = parseInt(environs[id].price) * parseInt(Newproduct[i].quatity)}$`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).attr(`data-quantity-item`, i)
                     break;
                 case "murad":
-                    $(".list-item").append(`<div class="cart-item d-flex justify-content-between pb-3" id="${IDproducts[i]}"></div>`)
-                    $(`.cart-item:nth-child(${i + 1})`).html(`
-                <div>
-                    <h3>${murad[id].name}</h3>
-                    <!--<p>Quantity: ${Newproduct[i].quatity}</p>-->
-                    <div class="quatity">  
-                        <p class="s-14">Quality:</p>
-                        <div class="btn-group" role="group" aria-label="Basic outlined example">
-                            <button type="button" data-id="${IDproducts[i]}" class="btn btn-outline-primary s-16">-</button>
-                            <input type="number" class="text-center s-16 ${IDproducts[i]}" value="${Newproduct[i].quatity}">
-                            <button type="button" data-id="${IDproducts[i]}" class="btn btn-outline-primary s-16">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex flex-column justify-content-between">
-                    <h3 data-price="${environs[id].price}" id="${i}price">${Prices[i] = parseInt(murad[id].price) * parseInt(Newproduct[i].quatity)}$</h3>
-                    <p>remove</p>
-                </div>
-                `)
-                    break;
+                    $(`tr:nth-child(${i + 2}) .img-product img`).attr("src", `${murad[id].img}`)
+                    $(`tr:nth-child(${i + 2}) .name`).text(`${murad[id].name}`)
+                    $(`tr:nth-child(${i + 2}) .price`).text(`${murad[id].price}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).attr("data-price", `${murad[id].price}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).attr("id", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).text(`${Prices[i] = parseInt(murad[id].price) * parseInt(Newproduct[i].quatity)}$`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).attr(`data-quantity-item`, i)
 
+                    break;
                 case "equipments":
-                    $(".list-item").append(`<div class="cart-item d-flex justify-content-between pb-3" id="${IDproducts[i]}"></div>`)
-                    $(`.cart-item:nth-child(${i + 1})`).html(`
-                <div>
-                    <h3 data-id="${IDproducts[i]}">${equipments[id].name}</h3>
-                    <!--<p>Quantity: ${Newproduct[i].quatity}</p>-->
-                    <div class="quatity">  
-                        <p class="s-14">Quality:</p>
-                        <div class="btn-group" role="group" aria-label="Basic outlined example">
-                            <button type="button" data-id="${IDproducts[i]}" class="btn btn-outline-primary s-16">-</button>
-                            <input type="number" class="text-center s-16 ${IDproducts[i]}" value="${Newproduct[i].quatity}">
-                            <button type="button" data-id="${IDproducts[i]}" class="btn btn-outline-primary s-16">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex flex-column justify-content-between">
-                    <h3 data-price="${environs[id].price}" id="${i}price">${Prices[i] = parseInt(equipments[id].price) * parseInt(Newproduct[i].quatity)}$</h3>
-                    <p>remove</p>
-                </div>
-                `)
+                    $(`tr:nth-child(${i + 2}) .img-product img`).attr("src", `${equipments[id].img}`)
+                    $(`tr:nth-child(${i + 2}) .name`).text(`${equipments[id].name}`)
+                    $(`tr:nth-child(${i + 2}) .price`).text(`${equipments[id].price}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).attr("data-price", `${equipments[id].price}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).attr("id", `${IDproducts[i]}`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).text(`${Prices[i] = parseInt(equipments[id].price) * parseInt(Newproduct[i].quatity)}$`)
+                    $(`tr:nth-child(${i + 2}) td:last-child p`).attr(`data-quantity-item`, i)
                     break;
             }
-            total += Prices[i];
-            $(".cart-bot h2:last-child").html(`${total}$`)
-        }
 
+            $(`tr:nth-child(${i + 2}) .btn-group input`).val(`${Newproduct[i].quatity}`)
+            $(`tr:nth-child(${i + 2}) .btn-group input`).addClass(`${IDproducts[i]}`)
+            $(`tr:nth-child(${i + 2}) .btn-group button:first-child, tr:nth-child(${i + 2}) .btn-group button:last-child`).attr("data-id", `${IDproducts[i]}`)
+        }
+        repairTotalbill()
 
         // 
-        if ($(".cart-item").text()) {
+        if (IDproducts.length) {
+            $(".cart-item .table").show()
             $(".cart-bot, .cart-bot-container hr").css("display", "flex")
             $(".cart-bot-container .empty").hide()
         }
+
 
         // xác nhận mua sản phẩm
         $(".proceed").click(function () {
@@ -185,35 +217,53 @@
         })
 
         // quatity
-        $(".quatity div[class=btn-group] button:first-child").click(function () {
+        $("tr .btn-group button:first-child").click(function () {
             let id = $(this).data("id");
+            // lấy quantity từ localstorage - rồi add lại
             let newp = JSON.parse(localStorage.getItem(id));
-            newp.quatity-=1;
-            localStorage.setItem(id,JSON.stringify(newp))
-            $("."+id).val(newp.quatity)
-            $("#"+id+" div:last-child h3").text(newp.quatity * parseInt($("#"+id+" div:last-child h3").data("price"))+"$")
-            let itemquatity = parseInt($(".cart-item:last-child div:last-child h3:first-child").attr("id"))
-            let totalquatity = 0;
-            for(let i = 0;i<=itemquatity;i++){
-                totalquatity += parseInt($(`.cart-item:nth-child(${i+1}) div:last-child h3:first-child`).text())
+            newp.quatity -= 1;
+            if (newp.quatity < 1) {
+                newp.quatity = 1;
             }
-            $(".cart-bot h2:last-child").text(`${totalquatity}$`)
-        })
-        $(".quatity div[class=btn-group] button:last-child").click(function () {
-            let id = $(this).data("id");
-            let newp = JSON.parse(localStorage.getItem(id));
-            newp.quatity+=1;
-            localStorage.setItem(id,JSON.stringify(newp))
-            $("."+id).val(newp.quatity)
-            $("#"+id+" div:last-child h3").text(newp.quatity * parseInt($("#"+id+" div:last-child h3").data("price"))+"$")
-            let itemquatity = parseInt($(".cart-item:last-child div:last-child h3:first-child").attr("id"))
-            let totalquatity = 0;
-            for(let i = 0;i<=itemquatity;i++){
-                totalquatity += parseInt($(`.cart-item:nth-child(${i+1}) div:last-child h3:first-child`).text())
-            }
-            $(".cart-bot h2:last-child").text(`${totalquatity}$`)
-        })
+            localStorage.setItem(id, JSON.stringify(newp));
+            // add quantity vào value sau khi đã giảm vào html
+            $("." + id).val(newp.quatity);
+            // add total money vào content sau khi giảm
+            $("#" + id).text(newp.quatity * parseInt($("#" + id).data("price")) + "$");
 
+            // repair total bill
+            repairTotalbill()
+        })
+        $("tr .btn-group button:last-child").click(function () {
+            let id = $(this).data("id");
+            // lấy quantity từ localstorage + rồi add lại
+            let newp = JSON.parse(localStorage.getItem(id));
+            newp.quatity += 1;
+            localStorage.setItem(id, JSON.stringify(newp));
+            // add quantity vào value sau khi đã giảm vào html
+            $("." + id).val(newp.quatity);
+            // add total money vào content sau khi giảm
+            $("#" + id).text(newp.quatity * parseInt($("#" + id).data("price")) + "$");
+
+            // repair total bill
+            repairTotalbill()
+        })
+        function repairTotalbill() {
+            let itemquatity = parseInt($("tr:last-child td:last-child p").attr("data-quantity-item"));
+            let totalquatity = 0;
+            for (let i = 0; i <= itemquatity; i++) {
+                totalquatity += parseInt($(`tr:nth-child(${i + 2}) td:last-child p`).text());
+            }
+            $(".cart-bot h2:last-child").text(`${totalquatity}$`);
+        }
+
+        // remove
+        $("tr td:last-child i").click(function () {
+            let dataremove = $(this).attr("data-remove")
+            let newIDproducts = IDproducts.filter(item => item != dataremove)
+            localStorage.setItem("IDproducts", JSON.stringify(newIDproducts))
+            location.reload()
+        })
     })
 
 

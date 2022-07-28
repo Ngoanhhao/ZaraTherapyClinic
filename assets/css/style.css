@@ -111,10 +111,9 @@ ul .nav-item a:hover{
 .dropdown:hover .dropdown-menu-third {
   position: relative;
   top: 53px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   transform-origin: 13% top;
   animation: zoomin ease 0.3s;
-  perspective: 1000px;
   display: block;
 }
 

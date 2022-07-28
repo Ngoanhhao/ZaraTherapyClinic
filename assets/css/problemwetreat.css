@@ -79,6 +79,25 @@
 ,.pneumexpneuback{
     max-width: 1100px !important;
 }
+.discsyndrome img:hover
+,.pneumexpneuback img:hover{
+    cursor: pointer;
+}
+.bg-img{
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 100;
+}
+.bg-img img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) !important;
+}
 
 .discsyndrome p
 ,.pneumexpneuback p{
